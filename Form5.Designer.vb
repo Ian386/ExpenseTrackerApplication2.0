@@ -102,37 +102,37 @@ Partial Class Form5
         clbOtherExpenses.Items.AddRange(New Object() {"Fee & charge", "Investments", "Kids", "Other"})
         clbOtherExpenses.Location = New Point(857, 396)
         clbOtherExpenses.Name = "clbOtherExpenses"
-        clbOtherExpenses.Size = New Size(198, 128)
+        clbOtherExpenses.Size = New Size(198, 120)
         clbOtherExpenses.TabIndex = 46
         ' 
         ' clbHealthCare
         ' 
         clbHealthCare.BackColor = Color.Linen
-        clbHealthCare.Font = New Font("Tahoma", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        clbHealthCare.Font = New Font("Tahoma", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         clbHealthCare.ForeColor = Color.ForestGreen
         clbHealthCare.FormattingEnabled = True
         clbHealthCare.Items.AddRange(New Object() {"Doctor", "Sport", "Insurance", "Gym Membership"})
         clbHealthCare.Location = New Point(523, 396)
         clbHealthCare.Name = "clbHealthCare"
-        clbHealthCare.Size = New Size(236, 128)
+        clbHealthCare.Size = New Size(236, 120)
         clbHealthCare.TabIndex = 45
         ' 
         ' clbEnjoyments
         ' 
         clbEnjoyments.BackColor = Color.Linen
-        clbEnjoyments.Font = New Font("Tahoma", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        clbEnjoyments.Font = New Font("Tahoma", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         clbEnjoyments.ForeColor = Color.ForestGreen
         clbEnjoyments.FormattingEnabled = True
         clbEnjoyments.Items.AddRange(New Object() {"Entertainment", "Fashion", "Travel", "Beauty Care", "Party", "Gift", "Donation"})
         clbEnjoyments.Location = New Point(857, 112)
         clbEnjoyments.Name = "clbEnjoyments"
-        clbEnjoyments.Size = New Size(198, 221)
+        clbEnjoyments.Size = New Size(198, 207)
         clbEnjoyments.TabIndex = 44
         ' 
         ' lbBasics
         ' 
         lbBasics.AutoSize = True
-        lbBasics.Font = New Font("Segoe UI", 9F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        lbBasics.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         lbBasics.ForeColor = Color.ForestGreen
         lbBasics.Location = New Point(523, 73)
         lbBasics.Name = "lbBasics"
@@ -143,22 +143,22 @@ Partial Class Form5
         ' clbBasics
         ' 
         clbBasics.BackColor = Color.Linen
-        clbBasics.Font = New Font("Tahoma", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        clbBasics.Font = New Font("Tahoma", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         clbBasics.ForeColor = Color.ForestGreen
         clbBasics.FormattingEnabled = True
         clbBasics.Items.AddRange(New Object() {"Food & Drinks", "Bill", "Transport", "House Rent", "Fix & Maintenance", "Utilities", "Groceries"})
         clbBasics.Location = New Point(523, 112)
         clbBasics.Name = "clbBasics"
-        clbBasics.Size = New Size(236, 221)
+        clbBasics.Size = New Size(236, 207)
         clbBasics.TabIndex = 28
         ' 
         ' btnSaveNewBudget
         ' 
         btnSaveNewBudget.BackColor = Color.Honeydew
         btnSaveNewBudget.FlatStyle = FlatStyle.Flat
-        btnSaveNewBudget.Font = New Font("Tahoma", 10F, FontStyle.Bold)
+        btnSaveNewBudget.Font = New Font("Tahoma", 10.0F, FontStyle.Bold)
         btnSaveNewBudget.ForeColor = Color.MintCream
-        btnSaveNewBudget.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce1
+        btnSaveNewBudget.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce
         btnSaveNewBudget.Location = New Point(889, 593)
         btnSaveNewBudget.Name = "btnSaveNewBudget"
         btnSaveNewBudget.Size = New Size(138, 59)
@@ -170,7 +170,7 @@ Partial Class Form5
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.Linen
-        Label1.Font = New Font("Segoe UI", 10F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.ForestGreen
         Label1.Location = New Point(713, 34)
         Label1.Name = "Label1"
@@ -182,7 +182,7 @@ Partial Class Form5
         ' 
         btnGoBackHome.BackColor = Color.Honeydew
         btnGoBackHome.FlatStyle = FlatStyle.Flat
-        btnGoBackHome.Font = New Font("Tahoma", 10F, FontStyle.Bold)
+        btnGoBackHome.Font = New Font("Tahoma", 10.0F, FontStyle.Bold)
         btnGoBackHome.ForeColor = Color.MintCream
         btnGoBackHome.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce1
         btnGoBackHome.Location = New Point(104, 593)
@@ -195,7 +195,7 @@ Partial Class Form5
         ' cbChooseWalllet
         ' 
         cbChooseWalllet.BackColor = Color.Green
-        cbChooseWalllet.Font = New Font("Tahoma", 9F)
+        cbChooseWalllet.Font = New Font("Tahoma", 9.0F)
         cbChooseWalllet.ForeColor = SystemColors.Window
         cbChooseWalllet.FormattingEnabled = True
         cbChooseWalllet.Location = New Point(201, 256)
@@ -206,10 +206,9 @@ Partial Class Form5
         ' lbChooseWallet
         ' 
         lbChooseWallet.AutoSize = True
-        lbChooseWallet.BackColor = Color.MediumAquamarine
-        lbChooseWallet.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbChooseWallet.BackColor = Color.Green
+        lbChooseWallet.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbChooseWallet.ForeColor = Color.Snow
-        lbChooseWallet.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce1
         lbChooseWallet.Location = New Point(32, 259)
         lbChooseWallet.Name = "lbChooseWallet"
         lbChooseWallet.Size = New Size(135, 25)
@@ -219,7 +218,7 @@ Partial Class Form5
         ' txtEndDate
         ' 
         txtEndDate.BackColor = Color.Green
-        txtEndDate.Font = New Font("Tahoma", 9F)
+        txtEndDate.Font = New Font("Tahoma", 9.0F)
         txtEndDate.ForeColor = SystemColors.Window
         txtEndDate.Location = New Point(201, 493)
         txtEndDate.Name = "txtEndDate"
@@ -230,10 +229,9 @@ Partial Class Form5
         ' lbEndDate
         ' 
         lbEndDate.AutoSize = True
-        lbEndDate.BackColor = Color.MediumAquamarine
-        lbEndDate.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbEndDate.BackColor = Color.Green
+        lbEndDate.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbEndDate.ForeColor = Color.Snow
-        lbEndDate.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce1
         lbEndDate.Location = New Point(43, 496)
         lbEndDate.Name = "lbEndDate"
         lbEndDate.Size = New Size(92, 25)
@@ -243,7 +241,7 @@ Partial Class Form5
         ' txtStartDate
         ' 
         txtStartDate.BackColor = Color.Green
-        txtStartDate.Font = New Font("Tahoma", 9F)
+        txtStartDate.Font = New Font("Tahoma", 9.0F)
         txtStartDate.ForeColor = SystemColors.Window
         txtStartDate.Location = New Point(201, 408)
         txtStartDate.Name = "txtStartDate"
@@ -254,10 +252,9 @@ Partial Class Form5
         ' lbStartDate
         ' 
         lbStartDate.AutoSize = True
-        lbStartDate.BackColor = Color.MediumAquamarine
-        lbStartDate.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbStartDate.BackColor = Color.Green
+        lbStartDate.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbStartDate.ForeColor = Color.Snow
-        lbStartDate.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce1
         lbStartDate.Location = New Point(32, 411)
         lbStartDate.Name = "lbStartDate"
         lbStartDate.Size = New Size(102, 25)
@@ -267,7 +264,7 @@ Partial Class Form5
         ' cbTimeRange
         ' 
         cbTimeRange.BackColor = Color.Green
-        cbTimeRange.Font = New Font("Tahoma", 9F)
+        cbTimeRange.Font = New Font("Tahoma", 9.0F)
         cbTimeRange.ForeColor = SystemColors.Window
         cbTimeRange.FormattingEnabled = True
         cbTimeRange.Items.AddRange(New Object() {"One time", "Weekly", "Monthly", "Yearly"})
@@ -279,10 +276,9 @@ Partial Class Form5
         ' lbTimeRange
         ' 
         lbTimeRange.AutoSize = True
-        lbTimeRange.BackColor = Color.MediumAquamarine
-        lbTimeRange.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbTimeRange.BackColor = Color.Green
+        lbTimeRange.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbTimeRange.ForeColor = Color.Snow
-        lbTimeRange.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce1
         lbTimeRange.Location = New Point(32, 334)
         lbTimeRange.Name = "lbTimeRange"
         lbTimeRange.Size = New Size(118, 25)
@@ -292,7 +288,7 @@ Partial Class Form5
         ' txtBudgetAmount
         ' 
         txtBudgetAmount.BackColor = Color.Green
-        txtBudgetAmount.Font = New Font("Tahoma", 9F)
+        txtBudgetAmount.Font = New Font("Tahoma", 9.0F)
         txtBudgetAmount.ForeColor = SystemColors.Window
         txtBudgetAmount.Location = New Point(201, 182)
         txtBudgetAmount.Name = "txtBudgetAmount"
@@ -302,10 +298,9 @@ Partial Class Form5
         ' lbAmount
         ' 
         lbAmount.AutoSize = True
-        lbAmount.BackColor = Color.MediumAquamarine
-        lbAmount.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbAmount.BackColor = Color.Green
+        lbAmount.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbAmount.ForeColor = Color.Snow
-        lbAmount.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce1
         lbAmount.Location = New Point(32, 182)
         lbAmount.Name = "lbAmount"
         lbAmount.Size = New Size(86, 25)
@@ -315,7 +310,7 @@ Partial Class Form5
         ' txtEnterBudgetName
         ' 
         txtEnterBudgetName.BackColor = Color.Green
-        txtEnterBudgetName.Font = New Font("Tahoma", 9F)
+        txtEnterBudgetName.Font = New Font("Tahoma", 9.0F)
         txtEnterBudgetName.ForeColor = SystemColors.Window
         txtEnterBudgetName.Location = New Point(201, 112)
         txtEnterBudgetName.Name = "txtEnterBudgetName"
@@ -325,10 +320,9 @@ Partial Class Form5
         ' lbBudgetName
         ' 
         lbBudgetName.AutoSize = True
-        lbBudgetName.BackColor = Color.MediumAquamarine
-        lbBudgetName.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbBudgetName.BackColor = Color.Green
+        lbBudgetName.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbBudgetName.ForeColor = Color.Snow
-        lbBudgetName.Image = My.Resources.Resources.abf9697f_d88a_45dd_b3de_32a3d56397ce1
         lbBudgetName.Location = New Point(32, 112)
         lbBudgetName.Name = "lbBudgetName"
         lbBudgetName.Size = New Size(134, 25)
