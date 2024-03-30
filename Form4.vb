@@ -40,8 +40,8 @@
 
     Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
 
-        Dim form7Instance As New Form7()
-        form7Instance.Show()
+        Dim form8Instance As New Form8()
+        form8Instance.Show()
     End Sub
 
     Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
