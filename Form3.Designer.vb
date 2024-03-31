@@ -61,7 +61,7 @@ Partial Class Form3
         ' 
         txtAmount.BackColor = Color.White
         txtAmount.Font = New Font("Tahoma", 9.75F)
-        txtAmount.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        txtAmount.ForeColor = Color.Black
         txtAmount.Location = New Point(102, 151)
         txtAmount.Name = "txtAmount"
         txtAmount.Size = New Size(187, 23)
@@ -83,7 +83,7 @@ Partial Class Form3
         ' 
         ComboBoxCurrency.BackColor = Color.White
         ComboBoxCurrency.Font = New Font("Tahoma", 9.75F)
-        ComboBoxCurrency.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        ComboBoxCurrency.ForeColor = Color.Black
         ComboBoxCurrency.FormattingEnabled = True
         ComboBoxCurrency.Location = New Point(102, 99)
         ComboBoxCurrency.Name = "ComboBoxCurrency"
@@ -106,7 +106,7 @@ Partial Class Form3
         ' 
         txtName.BackColor = Color.White
         txtName.Font = New Font("Tahoma", 9.75F)
-        txtName.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        txtName.ForeColor = Color.Black
         txtName.Location = New Point(102, 50)
         txtName.Name = "txtName"
         txtName.Size = New Size(187, 23)
@@ -141,7 +141,7 @@ Partial Class Form3
         Controls.Add(lblName)
         Margin = New Padding(2)
         Name = "Form3"
-        Text = "Form3"
+        Text = " "
         ResumeLayout(False)
         PerformLayout()
     End Sub
