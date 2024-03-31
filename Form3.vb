@@ -21,6 +21,7 @@
             MessageBox.Show("Please select a currency.")
             Return
         End If
+
         ' Get the entered amount
         If Decimal.TryParse(txtAmount.Text, enteredAmount) Then
             ' Valid amount entered
@@ -93,4 +94,3 @@
         Me.Close()
     End Sub
 End Class
-
