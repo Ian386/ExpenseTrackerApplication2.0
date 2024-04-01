@@ -36,9 +36,10 @@ Partial Class Form3
         ' bthHome
         ' 
         bthHome.BackColor = Color.Green
+        bthHome.BackgroundImageLayout = ImageLayout.Zoom
         bthHome.Font = New Font("Tahoma", 9.75F, FontStyle.Bold)
         bthHome.ForeColor = Color.Transparent
-        bthHome.Location = New Point(457, 266)
+        bthHome.Location = New Point(459, 266)
         bthHome.Name = "bthHome"
         bthHome.Size = New Size(75, 38)
         bthHome.TabIndex = 15
@@ -48,9 +49,10 @@ Partial Class Form3
         ' btnSave
         ' 
         btnSave.BackColor = Color.Green
+        btnSave.BackgroundImageLayout = ImageLayout.Zoom
         btnSave.Font = New Font("Tahoma", 9.75F, FontStyle.Bold)
         btnSave.ForeColor = Color.Transparent
-        btnSave.Location = New Point(116, 266)
+        btnSave.Location = New Point(61, 266)
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(75, 38)
         btnSave.TabIndex = 14
@@ -72,7 +74,7 @@ Partial Class Form3
         lblAmount.AutoSize = True
         lblAmount.BackColor = Color.White
         lblAmount.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
-        lblAmount.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        lblAmount.ForeColor = Color.LimeGreen
         lblAmount.Location = New Point(15, 151)
         lblAmount.Name = "lblAmount"
         lblAmount.Size = New Size(64, 18)
@@ -95,7 +97,7 @@ Partial Class Form3
         lblCurrency.AutoSize = True
         lblCurrency.BackColor = Color.White
         lblCurrency.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
-        lblCurrency.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        lblCurrency.ForeColor = Color.LimeGreen
         lblCurrency.Location = New Point(11, 99)
         lblCurrency.Name = "lblCurrency"
         lblCurrency.Size = New Size(76, 18)
@@ -117,7 +119,7 @@ Partial Class Form3
         lblName.AutoSize = True
         lblName.BackColor = Color.White
         lblName.Font = New Font("Tahoma", 11.25F, FontStyle.Bold)
-        lblName.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        lblName.ForeColor = Color.LimeGreen
         lblName.Location = New Point(15, 55)
         lblName.Name = "lblName"
         lblName.Size = New Size(51, 18)
