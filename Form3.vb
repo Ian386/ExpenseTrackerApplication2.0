@@ -14,15 +14,72 @@
         enteredName = txtName.Text
 
         ' Get the selected currency
-        selectedCurrency = ComboBoxCurrency.SelectedItem.ToString()
+        If ComboBoxCurrency.SelectedItem IsNot Nothing Then
+            selectedCurrency = ComboBoxCurrency.SelectedItem.ToString()
+        Else
+            ' No currency selected
+            MessageBox.Show("Please select a currency.")
+            Return
+        End If
 
         ' Get the entered amount
         If Decimal.TryParse(txtAmount.Text, enteredAmount) Then
             ' Valid amount entered
-            ' Do something with the entered name, selected currency, and amount
+            ' Set the currency symbol based on the selected currency
+            Dim currencySymbol As String
+            Select Case selectedCurrency
+                Case "USD"
+                    currencySymbol = "$"
+                Case "CAD"
+                    currencySymbol = "CA$"
+                Case "EUR"
+                    currencySymbol = "€"
+                Case "AED"
+                    currencySymbol = "د.إ" ' United Arab Emirates Dirham
+                Case "AUD"
+                    currencySymbol = "A$"
+                Case "CNY"
+                    currencySymbol = "¥"
+                Case "CZK"
+                    currencySymbol = "Kč"
+                Case "DJF"
+                    currencySymbol = "Fdj"
+                Case "EGP"
+                    currencySymbol = "E£"
+                Case "GBP"
+                    currencySymbol = "£"
+                Case "HKD"
+                    currencySymbol = "HK$"
+                Case "JPY"
+                    currencySymbol = "¥"
+                Case "KES"
+                    currencySymbol = "Ksh"
+                Case "SOS"
+                    currencySymbol = "Ssh"
+                Case "SEK"
+                    currencySymbol = "kr"
+                Case "TZC"
+                    currencySymbol = "TSh"
+                Case "UGX"
+                    currencySymbol = "USh"
+                Case "UYU"
+                    currencySymbol = "$U"
+                Case "UZS"
+                    currencySymbol = "soʻm"
+                Case "VND"
+                    currencySymbol = "₫"
+                Case "XAF"
+                    currencySymbol = "FCFA"
+                Case "ZAR"
+                    currencySymbol = "R"
+                Case Else
+                    currencySymbol = selectedCurrency & " " ' Default to currency code for unknown currencies
+            End Select
+
+            ' Display the entered information
             MessageBox.Show("Name: " & enteredName & vbCrLf &
-                            "Currency: " & selectedCurrency & vbCrLf &
-                            "Amount: " & enteredAmount.ToString("C"))
+                        "Currency: " & selectedCurrency & vbCrLf &
+                        "Amount: " & currencySymbol & enteredAmount.ToString())
             ' You can save the data to a database or perform further processing here
         Else
             ' Invalid amount entered
@@ -37,4 +94,3 @@
         Me.Close()
     End Sub
 End Class
-
