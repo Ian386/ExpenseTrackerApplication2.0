@@ -86,4 +86,8 @@ Public Class Form8
         form3Instance.Show()
         Me.Close()
     End Sub
+
+    Private Sub Form8_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
