@@ -1,15 +1,46 @@
-﻿Public Class Form3
+﻿Imports System
+Imports System.Data.SqlClient
+Imports Microsoft.Data.SqlClient
+Public Class Form3
+    Dim sqlConn As SqlConnection
+    Dim sqlCmd As SqlCommand
+    Dim sqlAdp As SqlDataAdapter
+
+
     Private enteredName As String = Nothing
     Private selectedCurrency As String = Nothing
     Private enteredAmount As Decimal = 0
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|Data Directory|EtrackerApp.mdf;Integrated Security=True;"
+        sqlConn = New SqlConnection(connStr)
+        sqlConn.Open()
         ' Populate ComboBox with currency options
         ComboBoxCurrency.Items.AddRange({"USD", "CAD", "EUR", "AED", "AUD", "CNY", "CZK", "DJF", "EGP", "GBP", "HKD", "KES", "JPY", "SOS", "SEK", "TZC", "UGX", "UYU", "UZS", "VND", "XAF", "ZAR"})
         ' Set default selected item if needed
         ComboBoxCurrency.SelectedIndex = 0
     End Sub
     Private Sub ButtonSubmit_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Using sqlConn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|Data Directory|EtrackerApp.mdf;Integrated Security=True;")
+            Try
+                ' Open the connection
+                sqlConn.Open()
+                Dim query As String = "INSERT INTO wallet (name, amount, user_id) VALUES (@Name, @Amount, @UserID)"
+                Using sqlCmd As New SqlCommand(query, sqlConn)
+                    sqlCmd.Parameters.AddWithValue("@Name", txtName.Text)
+                    sqlCmd.Parameters.AddWithValue("@Amount", Decimal.Parse(txtAmount.Text))
+                    sqlCmd.Parameters.AddWithValue("@UserID", 1)
+                    Dim rowsAffected As Integer = sqlCmd.ExecuteNonQuery()
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("Wallet information added successfully.")
+                    Else
+                        MessageBox.Show("Failed to add wallet information.")
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        End Using
         ' Get the entered name
         enteredName = txtName.Text
 
@@ -87,10 +118,141 @@
         End If
     End Sub
 
+    'To update wallet details
+    Private Sub UpdateWallet(ByVal walletId As Integer, ByVal newName As String, ByVal newAmount As Decimal)
+        Using sqlConn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|Data Directory|EtrackerApp.mdf;Integrated Security=True;")
+            Try
+                sqlConn.Open()
+
+                Dim query As String = "UPDATE wallet SET name = @NewName, amount = @NewAmount WHERE wallet_id = @WalletId"
+
+                Using sqlCmd As New SqlCommand(query, sqlConn)
+                    sqlCmd.Parameters.AddWithValue("@NewName", newName)
+                    sqlCmd.Parameters.AddWithValue("@NewAmount", newAmount)
+                    sqlCmd.Parameters.AddWithValue("@WalletId", walletId)
+
+                    Dim rowsAffected As Integer = sqlCmd.ExecuteNonQuery()
+
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("Wallet information updated successfully.")
+                    Else
+                        MessageBox.Show("Failed to update wallet information.")
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        End Using
+    End Sub
+    'Run code UpdateWallet(walletId, newName, newAmount)
+
+
+    'To add a wallet
+    Private Sub AddWallet(ByVal name As String, ByVal amount As Decimal, ByVal ownerId As Integer)
+        ' Define the connection string
+        Dim connectionString As String = "Data Source=YourServer;Initial Catalog=EtrackerApp;Integrated Security=True"
+
+        ' Define the SQL query to insert data into the wallet table
+        Dim query As String = "INSERT INTO wallet (name, amount, owner_id) VALUES (@Name, @Amount, @OwnerId)"
+
+        ' Create a new SqlConnection object using the connection string
+        Using sqlConn As New SqlConnection(connectionString)
+            Try
+                ' Open the connection
+                sqlConn.Open()
+
+                ' Create a new SqlCommand object with the SQL query and SqlConnection
+                Using sqlCmd As New SqlCommand(query, sqlConn)
+                    ' Add parameters to the SQL query
+                    sqlCmd.Parameters.AddWithValue("@Name", name)
+                    sqlCmd.Parameters.AddWithValue("@Amount", amount)
+                    sqlCmd.Parameters.AddWithValue("@OwnerId", ownerId)
+
+                    ' Execute the SQL query
+                    Dim rowsAffected As Integer = sqlCmd.ExecuteNonQuery()
+
+                    ' Check if the query was successful
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("Wallet added successfully.")
+                    Else
+                        MessageBox.Show("Failed to add wallet.")
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        End Using
+    End Sub
+    ' run code AddWallet("My Wallet", 100.0, 1)
+
+
+
+    'To delete wallet
+    Private Sub DeleteWallet(ByVal walletId As Integer)
+        Using sqlConn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|Data Directory|EtrackerApp.mdf;Integrated Security=True;")
+            Try
+                sqlConn.Open()
+
+                Dim query As String = "DELETE FROM wallet WHERE wallet_id = @WalletId"
+
+                Using sqlCmd As New SqlCommand(query, sqlConn)
+                    sqlCmd.Parameters.AddWithValue("@WalletId", walletId)
+
+                    Dim rowsAffected As Integer = sqlCmd.ExecuteNonQuery()
+
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("Wallet information deleted successfully.")
+                    Else
+                        MessageBox.Show("Failed to delete wallet information.")
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        End Using
+    End Sub
+    'run DeleteWallet(walletId)
+
+    'Querying Data
+    Private Sub LoadWalletData()
+        Using sqlConn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|Data Directory|EtrackerApp.mdf;Integrated Security=True;")
+            Try
+                sqlConn.Open()
+
+                Dim query As String = "SELECT * FROM wallet"
+
+                Using sqlCmd As New SqlCommand(query, sqlConn)
+                    Using reader As SqlDataReader = sqlCmd.ExecuteReader()
+                        While reader.Read()
+                            Dim walletId As Integer = Convert.ToInt32(reader("wallet_id"))
+                            Dim name As String = reader("name").ToString()
+                            Dim amount As Decimal = Convert.ToDecimal(reader("amount"))
+
+                            ' Process the retrieved data (e.g., display in a DataGridView)
+                            ' For example:
+                            ' dataGridView.Rows.Add(walletId, name, amount)
+                        End While
+                    End Using
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        End Using
+    End Sub
+
+    'run LoadWalletData()
+
+
+
+
 
     Private Sub bthHome_Click(sender As Object, e As EventArgs) Handles bthHome.Click
         ' Close the current form (Form3) and show the home form (Form1)
         Form4.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Form3_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        sqlConn.Close()
     End Sub
 End Class
