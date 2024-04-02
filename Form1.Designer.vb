@@ -30,8 +30,8 @@ Partial Class Form1
         Label6 = New Label()
         LinkLabel1 = New LinkLabel()
         Button1 = New Button()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
+        username = New TextBox()
+        password = New TextBox()
         SuspendLayout()
         ' 
         ' Label1
@@ -109,28 +109,30 @@ Partial Class Form1
         Button1.Text = "LOGIN"
         Button1.UseVisualStyleBackColor = True
         ' 
-        ' TextBox1
+        ' username
         ' 
-        TextBox1.Location = New Point(410, 153)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(150, 31)
-        TextBox1.TabIndex = 8
+        username.Location = New Point(410, 153)
+        username.Name = "username"
+        username.Size = New Size(150, 31)
+        username.TabIndex = 8
         ' 
-        ' TextBox2
+        ' password
         ' 
-        TextBox2.Location = New Point(410, 249)
-        TextBox2.Name = "TextBox2"
-        TextBox2.PasswordChar = "*"c
-        TextBox2.Size = New Size(150, 31)
-        TextBox2.TabIndex = 9
+        password.Location = New Point(410, 249)
+        password.Name = "password"
+        password.PasswordChar = "*"c
+        password.Size = New Size(150, 31)
+        password.TabIndex = 9
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = My.Resources.Resources.WhatsApp_Image_2024_03_31_at_9_29_17_AM
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(password)
+        Controls.Add(username)
         Controls.Add(Button1)
         Controls.Add(LinkLabel1)
         Controls.Add(Label6)
@@ -153,7 +155,7 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents username As TextBox
+    Friend WithEvents password As TextBox
 
 End Class

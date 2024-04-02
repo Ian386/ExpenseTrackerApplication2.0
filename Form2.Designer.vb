@@ -28,12 +28,12 @@ Partial Class Form2
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox3 = New TextBox()
-        TextBox4 = New TextBox()
-        TextBox5 = New TextBox()
-        TextBox6 = New TextBox()
+        f_name = New TextBox()
+        l_name = New TextBox()
+        username = New TextBox()
+        Email = New TextBox()
+        password = New TextBox()
+        cfm_password = New TextBox()
         Button1 = New Button()
         SuspendLayout()
         ' 
@@ -91,47 +91,47 @@ Partial Class Form2
         Label6.TabIndex = 5
         Label6.Text = "Confirm Password"
         ' 
-        ' TextBox1
+        ' f_name
         ' 
-        TextBox1.Location = New Point(406, 56)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(150, 31)
-        TextBox1.TabIndex = 6
+        f_name.Location = New Point(406, 56)
+        f_name.Name = "f_name"
+        f_name.Size = New Size(150, 31)
+        f_name.TabIndex = 6
         ' 
-        ' TextBox2
+        ' l_name
         ' 
-        TextBox2.Location = New Point(406, 115)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(150, 31)
-        TextBox2.TabIndex = 7
+        l_name.Location = New Point(406, 115)
+        l_name.Name = "l_name"
+        l_name.Size = New Size(150, 31)
+        l_name.TabIndex = 7
         ' 
-        ' TextBox3
+        ' username
         ' 
-        TextBox3.Location = New Point(406, 175)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(150, 31)
-        TextBox3.TabIndex = 8
+        username.Location = New Point(406, 175)
+        username.Name = "username"
+        username.Size = New Size(150, 31)
+        username.TabIndex = 8
         ' 
-        ' TextBox4
+        ' Email
         ' 
-        TextBox4.Location = New Point(406, 233)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(150, 31)
-        TextBox4.TabIndex = 9
+        Email.Location = New Point(406, 233)
+        Email.Name = "Email"
+        Email.Size = New Size(150, 31)
+        Email.TabIndex = 9
         ' 
-        ' TextBox5
+        ' password
         ' 
-        TextBox5.Location = New Point(406, 285)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(150, 31)
-        TextBox5.TabIndex = 10
+        password.Location = New Point(406, 285)
+        password.Name = "password"
+        password.Size = New Size(150, 31)
+        password.TabIndex = 10
         ' 
-        ' TextBox6
+        ' cfm_password
         ' 
-        TextBox6.Location = New Point(406, 346)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(150, 31)
-        TextBox6.TabIndex = 11
+        cfm_password.Location = New Point(406, 346)
+        cfm_password.Name = "cfm_password"
+        cfm_password.Size = New Size(150, 31)
+        cfm_password.TabIndex = 11
         ' 
         ' Button1
         ' 
@@ -146,14 +146,16 @@ Partial Class Form2
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = My.Resources.Resources.WhatsApp_Image_2024_03_31_at_9_29_17_AM
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
         Controls.Add(Button1)
-        Controls.Add(TextBox6)
-        Controls.Add(TextBox5)
-        Controls.Add(TextBox4)
-        Controls.Add(TextBox3)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(cfm_password)
+        Controls.Add(password)
+        Controls.Add(Email)
+        Controls.Add(username)
+        Controls.Add(l_name)
+        Controls.Add(f_name)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
@@ -172,11 +174,11 @@ Partial Class Form2
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents f_name As TextBox
+    Friend WithEvents l_name As TextBox
+    Friend WithEvents username As TextBox
+    Friend WithEvents Email As TextBox
+    Friend WithEvents password As TextBox
+    Friend WithEvents cfm_password As TextBox
     Friend WithEvents Button1 As Button
 End Class
