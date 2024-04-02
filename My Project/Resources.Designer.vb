@@ -173,6 +173,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property buttons() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("buttons", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property c44377b5_0c4e_4554_bbc9_d72d2cbedd16() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("c44377b5-0c4e-4554-bbc9-d72d2cbedd16", resourceCulture)
@@ -213,6 +223,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property download() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("download", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property e8e66d49_dea1_42ec_89cd_15b6e737386e() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("e8e66d49-dea1-42ec-89cd-15b6e737386e", resourceCulture)
@@ -223,6 +243,7 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+
         Friend ReadOnly Property WhatsApp_Image_2024_03_30_at_3_49_02_PM__1_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("WhatsApp Image 2024-03-30 at 3.49.02 PM (1)", resourceCulture)
@@ -256,6 +277,7 @@ Namespace My.Resources
         Friend ReadOnly Property WhatsApp_Image_2024_03_31_at_9_29_18_AM() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("WhatsApp Image 2024-03-31 at 9.29.18 AM", resourceCulture)
+
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
