@@ -158,29 +158,12 @@ Public Class Form8
         Me.Close()
     End Sub
 
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        Dim form7Instance As New Form7()
-        form7Instance.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-        Dim form5Instance As New Form5()
-        form5Instance.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        Dim form4Instance As New Form4()
-        form4Instance.Show()
-        Me.Close()
-    End Sub
-
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
         Dim form4Instance As New Form4()
         form4Instance.Show()
         Me.Close()
     End Sub
+
 
     Private Sub btnSubmitProfile_Click(sender As Object, e As EventArgs) Handles btnSubmitProfile.Click
         Dim currentUsername As String = txtUser.Text
@@ -330,6 +313,10 @@ Public Class Form8
 
     Private Sub btnS3_Click(sender As Object, e As EventArgs) Handles btnS1.Click
         TogglePasswordVisibility(txtConfirmPassword, btnS3)
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 
 End Class

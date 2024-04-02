@@ -1,9 +1,11 @@
-﻿Public Class Form4
-    Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Get the current time
-        Dim currentTime As DateTime = DateTime.Now
+﻿Imports System.Data.Common
+Imports System.Drawing.Drawing2D
+Imports System.IO
+Imports MySql.Data.MySqlClient
 
-        ' Determine the appropriate greeting based on the time of day
+Public Class Form4
+    Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim currentTime As DateTime = DateTime.Now
         Dim greeting As String
         If currentTime.Hour < 12 Then
             greeting = "Good morning"
@@ -15,42 +17,47 @@
 
         ' Update the label text
         lblGreeting.Text = greeting
+
     End Sub
-
     Private Sub btnWallet_Click(sender As Object, e As EventArgs) Handles btnWallet.Click
-
         Dim form3Instance As New Form3()
         form3Instance.Show()
+        Me.Close()
     End Sub
-    Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
-        Dim form4Instance As New Form4()
-        form4Instance.Show()
-    End Sub
-    Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
 
+    Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
+        btnBudget.FlatAppearance.BorderSize = 0
         Dim form5Instance As New Form5()
         form5Instance.Show()
+        Me.Close()
     End Sub
-
-    Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
-
+    Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
         Dim form6Instance As New Form6()
         form6Instance.Show()
+        Me.Close()
     End Sub
-
-    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-
+    Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
+        btnReports.FlatAppearance.BorderSize = 0
         Dim form7Instance As New Form7()
         form7Instance.Show()
+        Me.Close()
     End Sub
-
-    Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
-
-        Dim form6Instance As New Form6()
-        form6Instance.Show()
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        btnHelp.FlatAppearance.BorderSize = 0
+        Dim form8Instance As New Form8()
+        form8Instance.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.Close()
+        If MsgBox("Are you sure you want to exit?", vbExclamation + vbYesNo) = vbYes Then
+            Application.Exit()
+        Else
+            Return
+        End If
+    End Sub
+
+    Private Sub Form4_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
     End Sub
 End Class

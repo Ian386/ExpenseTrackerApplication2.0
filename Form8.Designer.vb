@@ -22,6 +22,7 @@ Partial Class Form8
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form8))
         Label1 = New Label()
         Label3 = New Label()
         ProfilePicture = New PictureBox()
@@ -61,10 +62,9 @@ Partial Class Form8
         Label11 = New Label()
         btnEditWallets = New Button()
         Panel1 = New Panel()
-        Label15 = New Label()
         PictureBox3 = New PictureBox()
-        PictureBox5 = New PictureBox()
-        PictureBox4 = New PictureBox()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
         btnReports = New Button()
         btnBudget = New Button()
         btnHome = New Button()
@@ -73,8 +73,8 @@ Partial Class Form8
         GroupBox3.SuspendLayout()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -443,10 +443,10 @@ Partial Class Form8
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(Label15)
+        Panel1.BackColor = Color.Black
         Panel1.Controls.Add(PictureBox3)
-        Panel1.Controls.Add(PictureBox5)
-        Panel1.Controls.Add(PictureBox4)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(PictureBox2)
         Panel1.Controls.Add(btnReports)
         Panel1.Controls.Add(btnBudget)
         Panel1.Controls.Add(btnHome)
@@ -456,70 +456,81 @@ Partial Class Form8
         Panel1.Size = New Size(286, 814)
         Panel1.TabIndex = 19
         ' 
-        ' Label15
-        ' 
-        Label15.AutoSize = True
-        Label15.Location = New Point(49, 31)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(86, 15)
-        Label15.TabIndex = 20
-        Label15.Text = "Profile Settings"
-        ' 
         ' PictureBox3
         ' 
-        PictureBox3.Location = New Point(49, 479)
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(31, 479)
+        PictureBox3.Margin = New Padding(2)
         PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(51, 47)
-        PictureBox3.TabIndex = 24
+        PictureBox3.Size = New Size(45, 33)
+        PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox3.TabIndex = 28
         PictureBox3.TabStop = False
         ' 
-        ' PictureBox5
+        ' PictureBox1
         ' 
-        PictureBox5.Location = New Point(49, 390)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(51, 47)
-        PictureBox5.TabIndex = 23
-        PictureBox5.TabStop = False
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.BackgroundImageLayout = ImageLayout.Center
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(31, 310)
+        PictureBox1.Margin = New Padding(2)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(45, 33)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 27
+        PictureBox1.TabStop = False
         ' 
-        ' PictureBox4
+        ' PictureBox2
         ' 
-        PictureBox4.Location = New Point(49, 296)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(51, 47)
-        PictureBox4.TabIndex = 22
-        PictureBox4.TabStop = False
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(31, 390)
+        PictureBox2.Margin = New Padding(2)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(45, 33)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 25
+        PictureBox2.TabStop = False
         ' 
         ' btnReports
         ' 
-        btnReports.Location = New Point(141, 479)
+        btnReports.BackColor = Color.Black
+        btnReports.ForeColor = Color.White
+        btnReports.Location = New Point(114, 479)
         btnReports.Name = "btnReports"
         btnReports.Size = New Size(89, 33)
         btnReports.TabIndex = 20
         btnReports.Text = "Reports"
-        btnReports.UseVisualStyleBackColor = True
+        btnReports.UseVisualStyleBackColor = False
         ' 
         ' btnBudget
         ' 
-        btnBudget.Location = New Point(141, 390)
+        btnBudget.BackColor = Color.Black
+        btnBudget.ForeColor = Color.White
+        btnBudget.Location = New Point(114, 390)
         btnBudget.Name = "btnBudget"
         btnBudget.Size = New Size(89, 33)
         btnBudget.TabIndex = 21
         btnBudget.Text = "Budget"
-        btnBudget.UseVisualStyleBackColor = True
+        btnBudget.UseVisualStyleBackColor = False
         ' 
         ' btnHome
         ' 
-        btnHome.Location = New Point(141, 310)
+        btnHome.BackColor = Color.Black
+        btnHome.ForeColor = Color.White
+        btnHome.Location = New Point(114, 310)
         btnHome.Name = "btnHome"
         btnHome.Size = New Size(89, 33)
         btnHome.TabIndex = 22
         btnHome.Text = "Home"
-        btnHome.UseVisualStyleBackColor = True
+        btnHome.UseVisualStyleBackColor = False
         ' 
         ' Form8
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.White
         ClientSize = New Size(957, 812)
         Controls.Add(Panel1)
         Controls.Add(btnEditWallets)
@@ -531,6 +542,7 @@ Partial Class Form8
         Controls.Add(ProfilePicture)
         Controls.Add(Label3)
         Controls.Add(Label1)
+        FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(2)
         Name = "Form8"
         Text = "Form8"
@@ -540,10 +552,9 @@ Partial Class Form8
         GroupBox3.ResumeLayout(False)
         GroupBox3.PerformLayout()
         Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -597,16 +608,15 @@ Partial Class Form8
     Friend WithEvents Button4 As Button
     Friend WithEvents txtUserName As TextBox
     Friend WithEvents txtNewPassword As TextBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents btnS2 As Button
     Friend WithEvents btnS3 As Button
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents btnSee As Button
 
     Friend WithEvents txtUserName1 As TextBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 
 
 End Class

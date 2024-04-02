@@ -7,6 +7,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ExpenseTrackerApplication",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3F832022-4534-4499-8709-13FEA9FAE6B1}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\OneDrive\Documents\ETrackerApp.mdf = ..\..\..\OneDrive\Documents\ETrackerApp.mdf
 		..\ExpenseTrackerProject_A-8-\Form5.vb = ..\ExpenseTrackerProject_A-8-\Form5.vb
 	EndProjectSection
 EndProject
