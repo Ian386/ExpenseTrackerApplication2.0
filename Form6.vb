@@ -1,40 +1,99 @@
-﻿Public Class Form6
+﻿Imports System
+Imports System.Data.SqlClient
+Imports Microsoft.Data.SqlClient
+Public Class Form6
+    Dim sqlConn As SqlConnection
+    Dim sqlCmd As SqlCommand
+    Dim sqlAdp As SqlDataAdapter
+
     Private selectedBudget As String = Nothing
-    Private selectedCategory As String = Nothing
     Private enteredAmount As Decimal = 0
-
+    Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
     Private Sub Form8_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        comboBoxBudget.Items.AddRange({"Budget 1", "Budget 2", "Budget 3", "Budget 4", "Budget 5"})
-        comboBoxBudget.SelectedIndex = 0
-
-        comboBoxCategory.Items.AddRange({"Food & Drinks", "Bill", "Transport", "House Rent", "Fix & Maintenance", "Utilities", "Groceries", "Entertainment", "Fashion", "Travel", "Beauty Care", "Party", "Gift", "Donation", "Doctor", "Sport", "Insurance", "Gym Membership", "Fee & charge", "Investments", "Kids", "Other"})
-        comboBoxCategory.SelectedIndex = 0
+        PopulateBudgetsDropdown()
     End Sub
-
+    Private Sub PopulateBudgetsDropdown()
+        Try
+            Using connection As New SqlConnection(connStr)
+                connection.Open()
+                Dim query As String = "SELECT BudgetID, BudgetName FROM Budgets"
+                Using command As New SqlCommand(query, connection)
+                    Using reader As SqlDataReader = command.ExecuteReader()
+                        While reader.Read()
+                            Dim budgetName As String = reader("BudgetName").ToString()
+                            Dim budgetID As Integer = Convert.ToInt32(reader("BudgetID"))
+                            Dim item As New ListItem(budgetName, budgetID)
+                            cmbBudgets.Items.Add(item)
+                        End While
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
     Private Sub ButtonSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        ' Get the selected budget
-        selectedBudget = comboBoxBudget.SelectedItem.ToString()
+        Dim selectedBudgetID As Integer = DirectCast(cmbBudgets.SelectedItem, ListItem).Value
+        Dim amount As Decimal = Decimal.Parse(txtAmount.Text)
 
-        ' Get the selected category
-        selectedCategory = comboBoxCategory.SelectedItem.ToString()
-
-        ' Get the entered amount
-        If Decimal.TryParse(txtAmount.Text, enteredAmount) Then
-            ' Valid amount entered
-            ' Do something with the selected budget, selected category, and entered amount
-            MessageBox.Show("Selected Budget: " & selectedBudget & vbCrLf &
-                            "Selected Category: " & selectedCategory & vbCrLf &
-                            "Amount: " & enteredAmount.ToString("C"))
-            ' You can save the data to a database or perform further processing here
-        Else
-            ' Invalid amount entered
-            MessageBox.Show("Please enter a valid amount.")
-        End If
+        ' Insert the transaction into the database
+        Try
+            Using connection As New SqlConnection(connStr)
+                connection.Open()
+                Dim query As String = "INSERT INTO Transactions (BudgetID, Amount) VALUES (@BudgetID,  @Amount)"
+                Using command As New SqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@BudgetID", selectedBudgetID)
+                    command.Parameters.AddWithValue("@Amount", amount)
+                    command.ExecuteNonQuery()
+                    MessageBox.Show("Transaction saved successfully!")
+                    txtAmount.Text = String.Empty
+                    cmbBudgets.SelectedIndex = -1
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
     End Sub
-
-    Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
         Dim form4Instance As New Form4()
         form4Instance.Show()
     End Sub
+
+    Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
+        btnBudget.FlatAppearance.BorderSize = 0
+        Dim form5Instance As New Form5()
+        form5Instance.Show()
+    End Sub
+    Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
+        btnReports.FlatAppearance.BorderSize = 0
+        Dim form7Instance As New Form7()
+        form7Instance.Show()
+    End Sub
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        btnHelp.FlatAppearance.BorderSize = 0
+        Dim form8Instance As New Form8()
+        form8Instance.Show()
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        If MsgBox("Are you sure you want to exit?", vbExclamation + vbYesNo) = vbYes Then
+            Application.Exit()
+        Else
+            Return
+        End If
+    End Sub
+End Class
+Public Class ListItem
+    Public Property Text As String
+    Public Property Value As Integer
+
+    Public Sub New(text As String, value As Integer)
+        Me.Text = text
+        Me.Value = value
+    End Sub
+
+    Public Overrides Function ToString() As String
+        Return Text
+    End Function
 End Class
