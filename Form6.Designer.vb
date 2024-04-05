@@ -51,14 +51,13 @@ Partial Class Form6
         ' btnSave
         ' 
         btnSave.BackColor = SystemColors.Control
-        btnSave.BackgroundImage = My.Resources.Resources.buttons
         btnSave.BackgroundImageLayout = ImageLayout.Stretch
         btnSave.FlatStyle = FlatStyle.Flat
         btnSave.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnSave.ForeColor = Color.Black
         btnSave.Location = New Point(488, 396)
         btnSave.Name = "btnSave"
-        btnSave.Size = New Size(112, 37)
+        btnSave.Size = New Size(78, 22)
         btnSave.TabIndex = 24
         btnSave.Text = "Save"
         btnSave.UseVisualStyleBackColor = False
@@ -67,7 +66,7 @@ Partial Class Form6
         ' 
         txtAmount.Location = New Point(418, 316)
         txtAmount.Name = "txtAmount"
-        txtAmount.Size = New Size(182, 31)
+        txtAmount.Size = New Size(129, 23)
         txtAmount.TabIndex = 23
         ' 
         ' lblAmount
@@ -75,7 +74,7 @@ Partial Class Form6
         lblAmount.AutoSize = True
         lblAmount.Location = New Point(271, 313)
         lblAmount.Name = "lblAmount"
-        lblAmount.Size = New Size(77, 25)
+        lblAmount.Size = New Size(51, 15)
         lblAmount.TabIndex = 22
         lblAmount.Text = "Amount"
         ' 
@@ -84,7 +83,7 @@ Partial Class Form6
         lblBudget.AutoSize = True
         lblBudget.Location = New Point(271, 243)
         lblBudget.Name = "lblBudget"
-        lblBudget.Size = New Size(120, 25)
+        lblBudget.Size = New Size(79, 15)
         lblBudget.TabIndex = 19
         lblBudget.Text = "Select Budget"
         ' 
@@ -95,7 +94,7 @@ Partial Class Form6
         cmbBudgets.FormattingEnabled = True
         cmbBudgets.Location = New Point(418, 240)
         cmbBudgets.Name = "cmbBudgets"
-        cmbBudgets.Size = New Size(182, 33)
+        cmbBudgets.Size = New Size(129, 23)
         cmbBudgets.TabIndex = 18
         ' 
         ' lbl
@@ -104,9 +103,10 @@ Partial Class Form6
         lbl.BackColor = Color.Transparent
         lbl.Font = New Font("Freestyle Script", 20F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         lbl.ForeColor = Color.Black
+
         lbl.Location = New Point(271, 93)
         lbl.Name = "lbl"
-        lbl.Size = New Size(188, 47)
+        lbl.Size = New Size(124, 32)
         lbl.TabIndex = 27
         lbl.Text = "New transaction"
         ' 
@@ -125,6 +125,7 @@ Partial Class Form6
         Panel1.Controls.Add(btnHelp)
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(2, 2, 2, 2)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(198, 638)
         Panel1.TabIndex = 28
@@ -146,7 +147,7 @@ Partial Class Form6
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
         PictureBox3.Location = New Point(15, 340)
         PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(38, 37)
+        PictureBox3.Size = New Size(27, 22)
         PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox3.TabIndex = 24
         PictureBox3.TabStop = False
@@ -158,7 +159,7 @@ Partial Class Form6
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(15, 201)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(38, 37)
+        PictureBox1.Size = New Size(27, 22)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 23
         PictureBox1.TabStop = False
@@ -169,7 +170,7 @@ Partial Class Form6
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
         PictureBox4.Location = New Point(15, 401)
         PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(38, 37)
+        PictureBox4.Size = New Size(27, 22)
         PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox4.TabIndex = 22
         PictureBox4.TabStop = False
@@ -180,7 +181,7 @@ Partial Class Form6
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(15, 265)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(38, 37)
+        PictureBox2.Size = New Size(27, 22)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 20
         PictureBox2.TabStop = False
@@ -196,7 +197,7 @@ Partial Class Form6
         btnClose.ForeColor = Color.Black
         btnClose.Location = New Point(64, 496)
         btnClose.Name = "btnClose"
-        btnClose.Size = New Size(82, 37)
+        btnClose.Size = New Size(57, 26)
         btnClose.TabIndex = 16
         btnClose.Text = "Exit"
         btnClose.UseVisualStyleBackColor = False
@@ -224,7 +225,7 @@ Partial Class Form6
         Button1.ForeColor = SystemColors.Control
         Button1.Location = New Point(49, 198)
         Button1.Name = "Button1"
-        Button1.Size = New Size(112, 41)
+        Button1.Size = New Size(78, 25)
         Button1.TabIndex = 9
         Button1.Text = "Home"
         Button1.UseVisualStyleBackColor = False
@@ -238,7 +239,7 @@ Partial Class Form6
         btnReports.ForeColor = SystemColors.Control
         btnReports.Location = New Point(49, 328)
         btnReports.Name = "btnReports"
-        btnReports.Size = New Size(112, 41)
+        btnReports.Size = New Size(78, 25)
         btnReports.TabIndex = 11
         btnReports.Text = "Reports"
         btnReports.UseVisualStyleBackColor = False
@@ -252,14 +253,14 @@ Partial Class Form6
         btnHelp.ForeColor = SystemColors.Control
         btnHelp.Location = New Point(49, 397)
         btnHelp.Name = "btnHelp"
-        btnHelp.Size = New Size(112, 41)
+        btnHelp.Size = New Size(78, 25)
         btnHelp.TabIndex = 12
         btnHelp.Text = "Settings"
         btnHelp.UseVisualStyleBackColor = False
         ' 
         ' Form6
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(690, 638)
@@ -271,6 +272,7 @@ Partial Class Form6
         Controls.Add(lblBudget)
         Controls.Add(cmbBudgets)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(2, 2, 2, 2)
         Name = "Form6"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Form6"

@@ -161,10 +161,12 @@ Partial Class Form8
         ' Label13
         ' 
         Label13.AutoSize = True
+
         Label13.Location = New Point(8, 222)
         Label13.Margin = New Padding(4, 0, 4, 0)
         Label13.Name = "Label13"
         Label13.Size = New Size(368, 25)
+
         Label13.TabIndex = 19
         Label13.Text = "Confirm User Login Details to Change Details"
         ' 
@@ -338,6 +340,7 @@ Partial Class Form8
         txtUserName1.Name = "txtUserName1"
         txtUserName1.PasswordChar = "*"c
         txtUserName1.Size = New Size(210, 37)
+
         txtUserName1.TabIndex = 35
         ' 
         ' btnSee
@@ -381,6 +384,7 @@ Partial Class Form8
         btnS3.TabIndex = 38
         btnS3.Text = "Show"
         btnS3.UseVisualStyleBackColor = False
+
         ' 
         ' Label14
         ' 
@@ -433,6 +437,7 @@ Partial Class Form8
         Label9.Margin = New Padding(4, 0, 4, 0)
         Label9.Name = "Label9"
         Label9.Size = New Size(150, 25)
+
         Label9.TabIndex = 15
         Label9.Text = "Current Password"
         ' 
@@ -703,7 +708,6 @@ Partial Class Form8
     Friend WithEvents btnS3 As Button
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents btnSee As Button
-
     Friend WithEvents txtUserName1 As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox1 As PictureBox
@@ -715,3 +719,4 @@ Partial Class Form8
 
 
 End Class
+

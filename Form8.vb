@@ -5,6 +5,7 @@ Imports Microsoft.Data.SqlClient
 Public Class Form8
 
     Private connectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
+
     'Not done but works
     Private Sub Form8_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -13,7 +14,7 @@ Public Class Form8
 
         Dim firstName As String = ""
         Dim lastName As String = ""
-
+    
         Using connection As New SqlConnection(connectionString)
             Dim query As String = "Select firstname, lastname FROM user_table WHERE email = @Username"
             Using command As New SqlCommand(query, connection)
@@ -29,6 +30,7 @@ Public Class Form8
         End Using
 
 
+
         txtDisplayName.Text = $"{firstName} {lastName}"
     End Sub
 
@@ -42,7 +44,9 @@ Public Class Form8
                 Dim selectedFilePath As String = openFileDialog.FileName
 
 
+
                 Dim originalImage As New Bitmap(selectedFilePath)
+
 
 
                 Dim resizedImage As Bitmap = ResizeImage(originalImage, ProfilePicture.Width, ProfilePicture.Height)
@@ -146,8 +150,10 @@ Public Class Form8
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
 
+
         Dim form7Instance As New Form7()
         form7Instance.Show()
+
         Me.Close()
     End Sub
 
@@ -160,6 +166,7 @@ Public Class Form8
         Dim form4Instance As New Form4()
         form4Instance.Show()
         Me.Close()
+
     End Sub
 
     Private Sub btnSubmitProfile_Click(sender As Object, e As EventArgs) Handles btnSubmitProfile.Click
@@ -209,7 +216,87 @@ Public Class Form8
             MessageBox.Show("Failed to update profile. Please try again.")
         End If
 
+
+    Private Function ValidateUser(username As String, password As String) As Boolean
+        Using connection As New SqlConnection(connectionString)
+            Dim query As String = "SELECT COUNT(*) FROM user_table WHERE username = @Username AND password = @Password"
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Username", username)
+                command.Parameters.AddWithValue("@Password", password)
+                connection.Open()
+                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                Return count > 0
+            End Using
+        End Using
+    End Function
+
+    Private Function UsernameExists(username As String) As Boolean
+        Using connection As New SqlConnection(connectionString)
+            Dim query As String = "SELECT COUNT(*) FROM user_table WHERE username = @Username"
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Username", username)
+                connection.Open()
+                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                Return count > 0
+            End Using
+        End Using
+    End Function
+
+    Private Function UpdateUserProfile(currentUsername As String, newUsername As String, newFirstName As String, newLastName As String, newEmailAddress As String) As Boolean
+        Using connection As New SqlConnection(connectionString)
+            Dim query As String = "UPDATE user_table SET "
+            Dim setClause As New List(Of String)()
+
+            If Not String.IsNullOrEmpty(newUsername) Then
+                setClause.Add("username = @NewUsername")
+            End If
+            If Not String.IsNullOrEmpty(newFirstName) Then
+                setClause.Add("firstname = @NewFirstName")
+            End If
+            If Not String.IsNullOrEmpty(newLastName) Then
+                setClause.Add("lastname = @NewLastName")
+            End If
+            If Not String.IsNullOrEmpty(newEmailAddress) Then
+                setClause.Add("email = @NewEmailAddress")
+            End If
+
+            query &= String.Join(", ", setClause)
+
+            query &= " WHERE username = @CurrentUsername"
+
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@CurrentUsername", currentUsername)
+                If Not String.IsNullOrEmpty(newUsername) Then
+                    command.Parameters.AddWithValue("@NewUsername", newUsername)
+                End If
+                If Not String.IsNullOrEmpty(newFirstName) Then
+                    command.Parameters.AddWithValue("@NewFirstName", newFirstName)
+                End If
+                If Not String.IsNullOrEmpty(newLastName) Then
+                    command.Parameters.AddWithValue("@NewLastName", newLastName)
+                End If
+                If Not String.IsNullOrEmpty(newEmailAddress) Then
+                    command.Parameters.AddWithValue("@NewEmailAddress", newEmailAddress)
+                End If
+
+                connection.Open()
+                Dim rowsAffected As Integer = command.ExecuteNonQuery()
+                Return rowsAffected > 0
+            End Using
+        End Using
+    End Function
+
+    Private Sub TogglePasswordVisibility(txtBox As TextBox, btn As Button)
+        ' Toggle the PasswordChar property of the textbox
+        If txtBox.PasswordChar = "*"c Then
+            txtBox.PasswordChar = ControlChars.NullChar ' Show password text
+            btn.Text = "Hide"
+        Else
+            txtBox.PasswordChar = "*"c ' Hide password text
+            btn.Text = "Show"
+        End If
     End Sub
+
 
     Private Function EmailAddressExists(emailAddress As String) As Boolean
         Using connection As New SqlConnection(connectionString)
@@ -319,6 +406,7 @@ Public Class Form8
         TogglePasswordVisibility(txtConfirmPassword, btnS3)
     End Sub
 
+
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         If MsgBox("Are you sure you want to exit?", vbExclamation + vbYesNo) = vbYes Then
             Application.Exit()
@@ -326,4 +414,5 @@ Public Class Form8
             Return
         End If
     End Sub
+
 End Class

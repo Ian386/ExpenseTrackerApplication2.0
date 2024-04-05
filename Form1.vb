@@ -1,7 +1,9 @@
+
 ﻿Imports Microsoft.Data.SqlClient
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 
 Public Class Form1
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -15,7 +17,9 @@ Public Class Form1
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
+
         con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
+
         con.Open()
         Dim stmt As String = "SELECT * FROM user_table WHERE username = '" & username.Text & "' AND password = '" & password.Text & "'"
         cmd = New SqlCommand(stmt, con)

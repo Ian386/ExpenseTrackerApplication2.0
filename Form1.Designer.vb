@@ -30,6 +30,7 @@ Partial Class Form1
         Button1 = New Button()
         username = New TextBox()
         password = New TextBox()
+
         Button2 = New Button()
         PictureBox1 = New PictureBox()
         Panel1 = New Panel()
@@ -42,62 +43,73 @@ Partial Class Form1
         Label3.AutoSize = True
         Label3.Location = New Point(197, 367)
         Label3.Name = "Label3"
-        Label3.Size = New Size(91, 25)
+        Label3.Size = New Size(75, 20)
         Label3.TabIndex = 2
         Label3.Text = "Username"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
+
         Label4.Location = New Point(197, 427)
+
         Label4.Name = "Label4"
-        Label4.Size = New Size(87, 25)
+        Label4.Size = New Size(70, 20)
         Label4.TabIndex = 3
         Label4.Text = "Password"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
+
         Label5.Location = New Point(200, 579)
+
         Label5.Name = "Label5"
-        Label5.Size = New Size(176, 25)
+        Label5.Size = New Size(115, 15)
         Label5.TabIndex = 4
         Label5.Text = "If you are a new user"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
+
         Label6.Location = New Point(434, 581)
+
         Label6.Name = "Label6"
-        Label6.Size = New Size(42, 25)
+        Label6.Size = New Size(27, 15)
         Label6.TabIndex = 5
         Label6.Text = "first"
         ' 
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
+
         LinkLabel1.Location = New Point(368, 579)
+
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(73, 25)
+        LinkLabel1.Size = New Size(48, 15)
         LinkLabel1.TabIndex = 6
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "sign_up"
         ' 
         ' Button1
         ' 
+
         Button1.BackgroundImage = My.Resources.Resources.buttons
         Button1.BackgroundImageLayout = ImageLayout.Stretch
         Button1.FlatAppearance.BorderSize = 0
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Location = New Point(285, 510)
+
         Button1.Name = "Button1"
-        Button1.Size = New Size(112, 34)
+        Button1.Size = New Size(78, 20)
         Button1.TabIndex = 7
         Button1.Text = "LOGIN"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' username
         ' 
+
         username.Location = New Point(349, 367)
         username.Name = "username"
         username.Size = New Size(150, 31)
@@ -106,10 +118,12 @@ Partial Class Form1
         ' password
         ' 
         password.Location = New Point(349, 427)
+
         password.Name = "password"
         password.PasswordChar = "*"c
         password.Size = New Size(150, 31)
         password.TabIndex = 9
+
         ' 
         ' Button2
         ' 
@@ -145,24 +159,29 @@ Partial Class Form1
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(712, 88)
         Panel1.TabIndex = 12
+
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+
         BackColor = Color.White
         ClientSize = New Size(712, 694)
         Controls.Add(Panel1)
         Controls.Add(password)
         Controls.Add(username)
+
         Controls.Add(Button1)
         Controls.Add(LinkLabel1)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
+
         Controls.Add(PictureBox1)
         FormBorderStyle = FormBorderStyle.None
+
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
         Text = "WELCOME"
@@ -179,8 +198,10 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents username As TextBox
     Friend WithEvents password As TextBox
+
     Friend WithEvents Button2 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
+
 
 End Class
