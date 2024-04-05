@@ -243,10 +243,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-
-        Friend ReadOnly Property WhatsApp_Image_2024_03_30_at_3_49_02_PM__1_() As System.Drawing.Bitmap
+        Friend ReadOnly Property images() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("WhatsApp Image 2024-03-30 at 3.49.02 PM (1)", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("images", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -254,9 +253,19 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property WhatsApp_Image_2024_03_30_at_4_17_52_PM() As System.Drawing.Bitmap
+        Friend ReadOnly Property Modern_Initial_E_Logo() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("WhatsApp Image 2024-03-30 at 4.17.52 PM", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Modern Initial E Logo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property WhatsApp_Image_2024_03_30_at_3_49_02_PM__1_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("WhatsApp Image 2024-03-30 at 3.49.02 PM (1)", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -277,7 +286,6 @@ Namespace My.Resources
         Friend ReadOnly Property WhatsApp_Image_2024_03_31_at_9_29_18_AM() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("WhatsApp Image 2024-03-31 at 9.29.18 AM", resourceCulture)
-
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

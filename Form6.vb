@@ -16,12 +16,12 @@ Public Class Form6
         Try
             Using connection As New SqlConnection(connStr)
                 connection.Open()
-                Dim query As String = "SELECT BudgetID, BudgetName FROM Budgets"
+                Dim query As String = "SELECT id, bgt_name FROM Budget"
                 Using command As New SqlCommand(query, connection)
                     Using reader As SqlDataReader = command.ExecuteReader()
                         While reader.Read()
-                            Dim budgetName As String = reader("BudgetName").ToString()
-                            Dim budgetID As Integer = Convert.ToInt32(reader("BudgetID"))
+                            Dim budgetName As String = reader("bgt_name").ToString()
+                            Dim budgetID As Integer = Convert.ToInt32(reader("id"))
                             Dim item As New ListItem(budgetName, budgetID)
                             cmbBudgets.Items.Add(item)
                         End While

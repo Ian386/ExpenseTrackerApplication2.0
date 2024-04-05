@@ -1,7 +1,8 @@
 ﻿Imports System.Data.SqlClient
+Imports Microsoft.Data.SqlClient
 Public Class Form5
     'connect to database
-    Dim ConStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ADMIN\OneDrive\Desktop\Visual Studio Projects\ExpenseTrackerApplication\ETrackerApp.mdf;Integrated Security=True"
+    Dim ConStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
     Dim SqlConn As New SqlConnection(ConStr)
     'declare variables to be used within the whole project
     Private Shared _budgetAmount As Decimal

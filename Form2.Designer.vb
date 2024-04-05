@@ -28,19 +28,22 @@ Partial Class Form2
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
-        f_name = New TextBox()
-        l_name = New TextBox()
+        firstname = New TextBox()
+        lastname = New TextBox()
         username = New TextBox()
         Email = New TextBox()
         password = New TextBox()
         cfm_password = New TextBox()
         Button1 = New Button()
+        Panel1 = New Panel()
+        lbl = New Label()
+        btnClose = New Button()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(212, 62)
+        Label1.Location = New Point(195, 135)
         Label1.Name = "Label1"
         Label1.Size = New Size(94, 25)
         Label1.TabIndex = 0
@@ -49,7 +52,7 @@ Partial Class Form2
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(212, 115)
+        Label2.Location = New Point(195, 188)
         Label2.Name = "Label2"
         Label2.Size = New Size(92, 25)
         Label2.TabIndex = 1
@@ -58,7 +61,7 @@ Partial Class Form2
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(212, 175)
+        Label3.Location = New Point(195, 248)
         Label3.Name = "Label3"
         Label3.Size = New Size(91, 25)
         Label3.TabIndex = 2
@@ -67,7 +70,7 @@ Partial Class Form2
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(212, 233)
+        Label4.Location = New Point(195, 306)
         Label4.Name = "Label4"
         Label4.Size = New Size(54, 25)
         Label4.TabIndex = 3
@@ -76,7 +79,7 @@ Partial Class Form2
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(212, 291)
+        Label5.Location = New Point(195, 364)
         Label5.Name = "Label5"
         Label5.Size = New Size(87, 25)
         Label5.TabIndex = 4
@@ -85,84 +88,129 @@ Partial Class Form2
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(212, 352)
+        Label6.Location = New Point(195, 425)
         Label6.Name = "Label6"
         Label6.Size = New Size(156, 25)
         Label6.TabIndex = 5
         Label6.Text = "Confirm Password"
         ' 
-        ' f_name
+        ' firstname
         ' 
-        f_name.Location = New Point(406, 56)
-        f_name.Name = "f_name"
-        f_name.Size = New Size(150, 31)
-        f_name.TabIndex = 6
+        firstname.Location = New Point(366, 129)
+        firstname.Name = "firstname"
+        firstname.Size = New Size(226, 31)
+        firstname.TabIndex = 6
         ' 
-        ' l_name
+        ' lastname
         ' 
-        l_name.Location = New Point(406, 115)
-        l_name.Name = "l_name"
-        l_name.Size = New Size(150, 31)
-        l_name.TabIndex = 7
+        lastname.Location = New Point(366, 188)
+        lastname.Name = "lastname"
+        lastname.Size = New Size(226, 31)
+        lastname.TabIndex = 7
         ' 
         ' username
         ' 
-        username.Location = New Point(406, 175)
+        username.Location = New Point(366, 248)
         username.Name = "username"
-        username.Size = New Size(150, 31)
+        username.Size = New Size(226, 31)
         username.TabIndex = 8
         ' 
         ' Email
         ' 
-        Email.Location = New Point(406, 233)
+        Email.Location = New Point(366, 306)
         Email.Name = "Email"
-        Email.Size = New Size(150, 31)
+        Email.Size = New Size(226, 31)
         Email.TabIndex = 9
         ' 
         ' password
         ' 
-        password.Location = New Point(406, 285)
+        password.Location = New Point(366, 358)
         password.Name = "password"
-        password.Size = New Size(150, 31)
+        password.Size = New Size(226, 31)
         password.TabIndex = 10
         ' 
         ' cfm_password
         ' 
-        cfm_password.Location = New Point(406, 346)
+        cfm_password.Location = New Point(366, 419)
         cfm_password.Name = "cfm_password"
-        cfm_password.Size = New Size(150, 31)
+        cfm_password.Size = New Size(226, 31)
         cfm_password.TabIndex = 11
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(329, 404)
+        Button1.BackgroundImage = My.Resources.Resources.buttons
+        Button1.BackgroundImageLayout = ImageLayout.Stretch
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Location = New Point(340, 511)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 12
         Button1.Text = "SIGN-UP"
         Button1.UseVisualStyleBackColor = True
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackgroundImage = My.Resources.Resources.download
+        Panel1.Dock = DockStyle.Left
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(148, 638)
+        Panel1.TabIndex = 13
+        ' 
+        ' lbl
+        ' 
+        lbl.AutoSize = True
+        lbl.BackColor = Color.Transparent
+        lbl.Font = New Font("Freestyle Script", 20F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        lbl.ForeColor = Color.Black
+        lbl.Location = New Point(195, 42)
+        lbl.Name = "lbl"
+        lbl.Size = New Size(105, 47)
+        lbl.TabIndex = 28
+        lbl.Text = "Sign Up"
+        ' 
+        ' btnClose
+        ' 
+        btnClose.AutoSize = True
+        btnClose.BackColor = Color.White
+        btnClose.BackgroundImageLayout = ImageLayout.Stretch
+        btnClose.FlatAppearance.BorderSize = 0
+        btnClose.FlatStyle = FlatStyle.Flat
+        btnClose.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnClose.ForeColor = Color.Red
+        btnClose.Location = New Point(558, 21)
+        btnClose.Name = "btnClose"
+        btnClose.Size = New Size(107, 35)
+        btnClose.TabIndex = 17
+        btnClose.Text = "X"
+        btnClose.UseVisualStyleBackColor = False
+        ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.WhatsApp_Image_2024_03_31_at_9_29_17_AM
-        BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(800, 450)
+        BackColor = Color.White
+        ClientSize = New Size(690, 638)
+        Controls.Add(btnClose)
+        Controls.Add(lbl)
         Controls.Add(Button1)
         Controls.Add(cfm_password)
         Controls.Add(password)
         Controls.Add(Email)
         Controls.Add(username)
-        Controls.Add(l_name)
-        Controls.Add(f_name)
+        Controls.Add(lastname)
+        Controls.Add(firstname)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "Form2"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "SIGN-UP"
         ResumeLayout(False)
         PerformLayout()
@@ -181,4 +229,9 @@ Partial Class Form2
     Friend WithEvents password As TextBox
     Friend WithEvents cfm_password As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents firstname As TextBox
+    Friend WithEvents lastname As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents lbl As Label
+    Friend WithEvents btnClose As Button
 End Class
