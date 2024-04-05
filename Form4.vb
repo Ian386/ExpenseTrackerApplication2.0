@@ -22,36 +22,30 @@ Public Class Form4
     Private Sub btnWallet_Click(sender As Object, e As EventArgs) Handles btnWallet.Click
         Dim form3Instance As New Form3()
         form3Instance.Show()
-        '' Me.Close()
-    End Sub
-    Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
-        btnHome.FlatStyle = FlatStyle.Flat
-        Dim form4iInstance As New Form4()
-        form4iInstance.Show()
-        '' Me.Close()
+        Me.Close()
     End Sub
     Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
         btnBudget.FlatAppearance.BorderSize = 0
         Dim form5Instance As New Form5()
         form5Instance.Show()
-        '' Me.Close()
+        Me.Close()
     End Sub
     Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
         Dim form6Instance As New Form6()
         form6Instance.Show()
-        '' Me.Close()
+        Me.Close()
     End Sub
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         btnReports.FlatAppearance.BorderSize = 0
         Dim form7Instance As New Form7()
         form7Instance.Show()
-        '' Me.Close()
+        Me.Close()
     End Sub
     Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
         btnHelp.FlatAppearance.BorderSize = 0
         Dim form8Instance As New Form8()
         form8Instance.Show()
-        '' Me.Close()
+        Me.Close()
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click

@@ -30,16 +30,18 @@ Partial Class Form6
         cmbBudgets = New ComboBox()
         lbl = New Label()
         Panel1 = New Panel()
+        PictureBox5 = New PictureBox()
         PictureBox3 = New PictureBox()
         PictureBox1 = New PictureBox()
         PictureBox4 = New PictureBox()
         PictureBox2 = New PictureBox()
-        btnBudget = New Button()
         btnClose = New Button()
+        btnBudget = New Button()
         Button1 = New Button()
         btnReports = New Button()
         btnHelp = New Button()
         Panel1.SuspendLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -54,7 +56,7 @@ Partial Class Form6
         btnSave.FlatStyle = FlatStyle.Flat
         btnSave.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnSave.ForeColor = Color.Black
-        btnSave.Location = New Point(438, 316)
+        btnSave.Location = New Point(488, 396)
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(112, 37)
         btnSave.TabIndex = 24
@@ -63,7 +65,7 @@ Partial Class Form6
         ' 
         ' txtAmount
         ' 
-        txtAmount.Location = New Point(368, 236)
+        txtAmount.Location = New Point(418, 316)
         txtAmount.Name = "txtAmount"
         txtAmount.Size = New Size(182, 31)
         txtAmount.TabIndex = 23
@@ -71,7 +73,7 @@ Partial Class Form6
         ' lblAmount
         ' 
         lblAmount.AutoSize = True
-        lblAmount.Location = New Point(221, 233)
+        lblAmount.Location = New Point(271, 313)
         lblAmount.Name = "lblAmount"
         lblAmount.Size = New Size(77, 25)
         lblAmount.TabIndex = 22
@@ -80,7 +82,7 @@ Partial Class Form6
         ' lblBudget
         ' 
         lblBudget.AutoSize = True
-        lblBudget.Location = New Point(221, 163)
+        lblBudget.Location = New Point(271, 243)
         lblBudget.Name = "lblBudget"
         lblBudget.Size = New Size(120, 25)
         lblBudget.TabIndex = 19
@@ -91,7 +93,7 @@ Partial Class Form6
         cmbBudgets.BackColor = Color.White
         cmbBudgets.DropDownStyle = ComboBoxStyle.DropDownList
         cmbBudgets.FormattingEnabled = True
-        cmbBudgets.Location = New Point(368, 160)
+        cmbBudgets.Location = New Point(418, 240)
         cmbBudgets.Name = "cmbBudgets"
         cmbBudgets.Size = New Size(182, 33)
         cmbBudgets.TabIndex = 18
@@ -102,7 +104,7 @@ Partial Class Form6
         lbl.BackColor = Color.Transparent
         lbl.Font = New Font("Freestyle Script", 20F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         lbl.ForeColor = Color.Black
-        lbl.Location = New Point(242, 65)
+        lbl.Location = New Point(271, 93)
         lbl.Name = "lbl"
         lbl.Size = New Size(188, 47)
         lbl.TabIndex = 27
@@ -110,27 +112,39 @@ Partial Class Form6
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.download
+        Panel1.BackColor = Color.Black
+        Panel1.Controls.Add(PictureBox5)
         Panel1.Controls.Add(PictureBox3)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(PictureBox4)
         Panel1.Controls.Add(PictureBox2)
-        Panel1.Controls.Add(btnBudget)
         Panel1.Controls.Add(btnClose)
+        Panel1.Controls.Add(btnBudget)
         Panel1.Controls.Add(Button1)
         Panel1.Controls.Add(btnReports)
         Panel1.Controls.Add(btnHelp)
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(185, 433)
+        Panel1.Size = New Size(198, 638)
         Panel1.TabIndex = 28
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(28, 32)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(142, 123)
+        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox5.TabIndex = 29
+        PictureBox5.TabStop = False
         ' 
         ' PictureBox3
         ' 
         PictureBox3.BackColor = Color.Transparent
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(10, 180)
+        PictureBox3.Location = New Point(15, 340)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(38, 37)
         PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
@@ -142,7 +156,7 @@ Partial Class Form6
         PictureBox1.BackColor = Color.Transparent
         PictureBox1.BackgroundImageLayout = ImageLayout.Center
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(10, 41)
+        PictureBox1.Location = New Point(15, 201)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(38, 37)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -153,7 +167,7 @@ Partial Class Form6
         ' 
         PictureBox4.BackColor = Color.Transparent
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(10, 241)
+        PictureBox4.Location = New Point(15, 401)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(38, 37)
         PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
@@ -164,25 +178,12 @@ Partial Class Form6
         ' 
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(10, 105)
+        PictureBox2.Location = New Point(15, 265)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(38, 37)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 20
         PictureBox2.TabStop = False
-        ' 
-        ' btnBudget
-        ' 
-        btnBudget.AutoSize = True
-        btnBudget.BackColor = Color.Transparent
-        btnBudget.FlatStyle = FlatStyle.Popup
-        btnBudget.ForeColor = SystemColors.Control
-        btnBudget.Location = New Point(61, 105)
-        btnBudget.Name = "btnBudget"
-        btnBudget.Size = New Size(112, 41)
-        btnBudget.TabIndex = 10
-        btnBudget.Text = "Budget"
-        btnBudget.UseVisualStyleBackColor = False
         ' 
         ' btnClose
         ' 
@@ -193,20 +194,35 @@ Partial Class Form6
         btnClose.FlatStyle = FlatStyle.Flat
         btnClose.Font = New Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnClose.ForeColor = Color.Black
-        btnClose.Location = New Point(59, 336)
+        btnClose.Location = New Point(64, 496)
         btnClose.Name = "btnClose"
         btnClose.Size = New Size(82, 37)
         btnClose.TabIndex = 16
         btnClose.Text = "Exit"
         btnClose.UseVisualStyleBackColor = False
         ' 
+        ' btnBudget
+        ' 
+        btnBudget.AutoSize = True
+        btnBudget.BackColor = Color.Transparent
+        btnBudget.FlatAppearance.BorderSize = 0
+        btnBudget.FlatStyle = FlatStyle.Flat
+        btnBudget.ForeColor = SystemColors.Control
+        btnBudget.Location = New Point(49, 266)
+        btnBudget.Name = "btnBudget"
+        btnBudget.Size = New Size(112, 41)
+        btnBudget.TabIndex = 10
+        btnBudget.Text = "Budget"
+        btnBudget.UseVisualStyleBackColor = False
+        ' 
         ' Button1
         ' 
         Button1.AutoSize = True
         Button1.BackColor = Color.Transparent
-        Button1.FlatStyle = FlatStyle.Popup
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatStyle = FlatStyle.Flat
         Button1.ForeColor = SystemColors.Control
-        Button1.Location = New Point(61, 37)
+        Button1.Location = New Point(49, 198)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 41)
         Button1.TabIndex = 9
@@ -217,9 +233,10 @@ Partial Class Form6
         ' 
         btnReports.AutoSize = True
         btnReports.BackColor = Color.Transparent
-        btnReports.FlatStyle = FlatStyle.Popup
+        btnReports.FlatAppearance.BorderSize = 0
+        btnReports.FlatStyle = FlatStyle.Flat
         btnReports.ForeColor = SystemColors.Control
-        btnReports.Location = New Point(61, 167)
+        btnReports.Location = New Point(49, 328)
         btnReports.Name = "btnReports"
         btnReports.Size = New Size(112, 41)
         btnReports.TabIndex = 11
@@ -230,9 +247,10 @@ Partial Class Form6
         ' 
         btnHelp.AutoSize = True
         btnHelp.BackColor = Color.Transparent
-        btnHelp.FlatStyle = FlatStyle.Popup
+        btnHelp.FlatAppearance.BorderSize = 0
+        btnHelp.FlatStyle = FlatStyle.Flat
         btnHelp.ForeColor = SystemColors.Control
-        btnHelp.Location = New Point(61, 236)
+        btnHelp.Location = New Point(49, 397)
         btnHelp.Name = "btnHelp"
         btnHelp.Size = New Size(112, 41)
         btnHelp.TabIndex = 12
@@ -244,7 +262,7 @@ Partial Class Form6
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(622, 433)
+        ClientSize = New Size(690, 638)
         Controls.Add(Panel1)
         Controls.Add(lbl)
         Controls.Add(btnSave)
@@ -254,9 +272,11 @@ Partial Class Form6
         Controls.Add(cmbBudgets)
         FormBorderStyle = FormBorderStyle.None
         Name = "Form6"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Form6"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
@@ -280,4 +300,5 @@ Partial Class Form6
     Friend WithEvents Button1 As Button
     Friend WithEvents btnReports As Button
     Friend WithEvents btnHelp As Button
+    Friend WithEvents PictureBox5 As PictureBox
 End Class

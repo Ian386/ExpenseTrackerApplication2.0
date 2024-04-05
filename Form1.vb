@@ -1,5 +1,8 @@
-﻿Public Class Form1
-    Public Shared signUpClicked As Boolean = False
+﻿Imports Microsoft.Data.SqlClient
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+
+Public Class Form1
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -9,22 +12,38 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
 
-        If signUpClicked Then
+        con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
+        con.Open()
+        Dim stmt As String = "SELECT * FROM user_table WHERE username = '" & username.Text & "' AND password = '" & password.Text & "'"
+        cmd = New SqlCommand(stmt, con)
+        Dim dr As SqlDataReader = cmd.ExecuteReader()
+        If dr.Read() Then
+            MessageBox.Show("Login Successful")
             Dim form4 As New Form4
             form4.Show()
-            Dim form3 As New Form3
-            form3.Show()
+            Me.Hide()
         Else
-            ' If user has not clicked the sign-up button, open only Form4
-            Dim form4 As New Form4
-            form4.Show()
+            MessageBox.Show("Invalid username or password")
+            username.Clear()
+            password.Clear()
         End If
-        Me.Hide()
+        con.Close()
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim form2 As New Form2
         form2.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If MsgBox("Are you sure you want to exit?", vbExclamation + vbYesNo) = vbYes Then
+            Application.Exit()
+        Else
+            Return
+        End If
     End Sub
 End Class

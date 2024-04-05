@@ -28,19 +28,22 @@ Partial Class Form2
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox3 = New TextBox()
-        TextBox4 = New TextBox()
-        TextBox5 = New TextBox()
-        TextBox6 = New TextBox()
+        firstname = New TextBox()
+        lastname = New TextBox()
+        username = New TextBox()
+        Email = New TextBox()
+        password = New TextBox()
+        cfm_password = New TextBox()
         Button1 = New Button()
+        Panel1 = New Panel()
+        lbl = New Label()
+        btnClose = New Button()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(212, 62)
+        Label1.Location = New Point(195, 135)
         Label1.Name = "Label1"
         Label1.Size = New Size(94, 25)
         Label1.TabIndex = 0
@@ -49,7 +52,7 @@ Partial Class Form2
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(212, 115)
+        Label2.Location = New Point(195, 188)
         Label2.Name = "Label2"
         Label2.Size = New Size(92, 25)
         Label2.TabIndex = 1
@@ -58,7 +61,7 @@ Partial Class Form2
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(212, 175)
+        Label3.Location = New Point(195, 248)
         Label3.Name = "Label3"
         Label3.Size = New Size(91, 25)
         Label3.TabIndex = 2
@@ -67,7 +70,7 @@ Partial Class Form2
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(212, 233)
+        Label4.Location = New Point(195, 306)
         Label4.Name = "Label4"
         Label4.Size = New Size(54, 25)
         Label4.TabIndex = 3
@@ -76,7 +79,7 @@ Partial Class Form2
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(212, 291)
+        Label5.Location = New Point(195, 364)
         Label5.Name = "Label5"
         Label5.Size = New Size(87, 25)
         Label5.TabIndex = 4
@@ -85,82 +88,129 @@ Partial Class Form2
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(212, 352)
+        Label6.Location = New Point(195, 425)
         Label6.Name = "Label6"
         Label6.Size = New Size(156, 25)
         Label6.TabIndex = 5
         Label6.Text = "Confirm Password"
         ' 
-        ' TextBox1
+        ' firstname
         ' 
-        TextBox1.Location = New Point(406, 56)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(150, 31)
-        TextBox1.TabIndex = 6
+        firstname.Location = New Point(366, 129)
+        firstname.Name = "firstname"
+        firstname.Size = New Size(226, 31)
+        firstname.TabIndex = 6
         ' 
-        ' TextBox2
+        ' lastname
         ' 
-        TextBox2.Location = New Point(406, 115)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(150, 31)
-        TextBox2.TabIndex = 7
+        lastname.Location = New Point(366, 188)
+        lastname.Name = "lastname"
+        lastname.Size = New Size(226, 31)
+        lastname.TabIndex = 7
         ' 
-        ' TextBox3
+        ' username
         ' 
-        TextBox3.Location = New Point(406, 175)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(150, 31)
-        TextBox3.TabIndex = 8
+        username.Location = New Point(366, 248)
+        username.Name = "username"
+        username.Size = New Size(226, 31)
+        username.TabIndex = 8
         ' 
-        ' TextBox4
+        ' Email
         ' 
-        TextBox4.Location = New Point(406, 233)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(150, 31)
-        TextBox4.TabIndex = 9
+        Email.Location = New Point(366, 306)
+        Email.Name = "Email"
+        Email.Size = New Size(226, 31)
+        Email.TabIndex = 9
         ' 
-        ' TextBox5
+        ' password
         ' 
-        TextBox5.Location = New Point(406, 285)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(150, 31)
-        TextBox5.TabIndex = 10
+        password.Location = New Point(366, 358)
+        password.Name = "password"
+        password.Size = New Size(226, 31)
+        password.TabIndex = 10
         ' 
-        ' TextBox6
+        ' cfm_password
         ' 
-        TextBox6.Location = New Point(406, 346)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(150, 31)
-        TextBox6.TabIndex = 11
+        cfm_password.Location = New Point(366, 419)
+        cfm_password.Name = "cfm_password"
+        cfm_password.Size = New Size(226, 31)
+        cfm_password.TabIndex = 11
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(329, 404)
+        Button1.BackgroundImage = My.Resources.Resources.buttons
+        Button1.BackgroundImageLayout = ImageLayout.Stretch
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Location = New Point(340, 511)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 12
         Button1.Text = "SIGN-UP"
         Button1.UseVisualStyleBackColor = True
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackgroundImage = My.Resources.Resources.download
+        Panel1.Dock = DockStyle.Left
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(148, 638)
+        Panel1.TabIndex = 13
+        ' 
+        ' lbl
+        ' 
+        lbl.AutoSize = True
+        lbl.BackColor = Color.Transparent
+        lbl.Font = New Font("Freestyle Script", 20F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        lbl.ForeColor = Color.Black
+        lbl.Location = New Point(195, 42)
+        lbl.Name = "lbl"
+        lbl.Size = New Size(105, 47)
+        lbl.TabIndex = 28
+        lbl.Text = "Sign Up"
+        ' 
+        ' btnClose
+        ' 
+        btnClose.AutoSize = True
+        btnClose.BackColor = Color.White
+        btnClose.BackgroundImageLayout = ImageLayout.Stretch
+        btnClose.FlatAppearance.BorderSize = 0
+        btnClose.FlatStyle = FlatStyle.Flat
+        btnClose.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnClose.ForeColor = Color.Red
+        btnClose.Location = New Point(558, 21)
+        btnClose.Name = "btnClose"
+        btnClose.Size = New Size(107, 35)
+        btnClose.TabIndex = 17
+        btnClose.Text = "X"
+        btnClose.UseVisualStyleBackColor = False
+        ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        BackColor = Color.White
+        ClientSize = New Size(690, 638)
+        Controls.Add(btnClose)
+        Controls.Add(lbl)
         Controls.Add(Button1)
-        Controls.Add(TextBox6)
-        Controls.Add(TextBox5)
-        Controls.Add(TextBox4)
-        Controls.Add(TextBox3)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(cfm_password)
+        Controls.Add(password)
+        Controls.Add(Email)
+        Controls.Add(username)
+        Controls.Add(lastname)
+        Controls.Add(firstname)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "Form2"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "SIGN-UP"
         ResumeLayout(False)
         PerformLayout()
@@ -172,11 +222,16 @@ Partial Class Form2
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents f_name As TextBox
+    Friend WithEvents l_name As TextBox
+    Friend WithEvents username As TextBox
+    Friend WithEvents Email As TextBox
+    Friend WithEvents password As TextBox
+    Friend WithEvents cfm_password As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents firstname As TextBox
+    Friend WithEvents lastname As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents lbl As Label
+    Friend WithEvents btnClose As Button
 End Class

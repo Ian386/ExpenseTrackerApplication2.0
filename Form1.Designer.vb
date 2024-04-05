@@ -22,42 +22,25 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Label1 = New Label()
-        Label2 = New Label()
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
         LinkLabel1 = New LinkLabel()
         Button1 = New Button()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
+        username = New TextBox()
+        password = New TextBox()
+        Button2 = New Button()
+        PictureBox1 = New PictureBox()
+        Panel1 = New Panel()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Algerian", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(129, 9)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(590, 35)
-        Label1.TabIndex = 0
-        Label1.Text = "WELCOME TO EXPENSE TRACKER 2.0"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Lucida Calligraphy", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(-7, 71)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(468, 27)
-        Label2.TabIndex = 1
-        Label2.Text = "Where your expenses meet your budget"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(205, 153)
+        Label3.Location = New Point(197, 367)
         Label3.Name = "Label3"
         Label3.Size = New Size(91, 25)
         Label3.TabIndex = 2
@@ -66,7 +49,7 @@ Partial Class Form1
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(205, 249)
+        Label4.Location = New Point(197, 427)
         Label4.Name = "Label4"
         Label4.Size = New Size(87, 25)
         Label4.TabIndex = 3
@@ -75,7 +58,7 @@ Partial Class Form1
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(190, 416)
+        Label5.Location = New Point(200, 579)
         Label5.Name = "Label5"
         Label5.Size = New Size(176, 25)
         Label5.TabIndex = 4
@@ -84,7 +67,7 @@ Partial Class Form1
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(451, 416)
+        Label6.Location = New Point(434, 581)
         Label6.Name = "Label6"
         Label6.Size = New Size(42, 25)
         Label6.TabIndex = 5
@@ -93,7 +76,7 @@ Partial Class Form1
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
-        LinkLabel1.Location = New Point(372, 416)
+        LinkLabel1.Location = New Point(368, 579)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(73, 25)
         LinkLabel1.TabIndex = 6
@@ -102,58 +85,102 @@ Partial Class Form1
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(322, 339)
+        Button1.BackgroundImage = My.Resources.Resources.buttons
+        Button1.BackgroundImageLayout = ImageLayout.Stretch
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Location = New Point(285, 510)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 7
         Button1.Text = "LOGIN"
         Button1.UseVisualStyleBackColor = True
         ' 
-        ' TextBox1
+        ' username
         ' 
-        TextBox1.Location = New Point(410, 153)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(150, 31)
-        TextBox1.TabIndex = 8
+        username.Location = New Point(349, 367)
+        username.Name = "username"
+        username.Size = New Size(150, 31)
+        username.TabIndex = 8
         ' 
-        ' TextBox2
+        ' password
         ' 
-        TextBox2.Location = New Point(410, 249)
-        TextBox2.Name = "TextBox2"
-        TextBox2.PasswordChar = "*"c
-        TextBox2.Size = New Size(150, 31)
-        TextBox2.TabIndex = 9
+        password.Location = New Point(349, 427)
+        password.Name = "password"
+        password.PasswordChar = "*"c
+        password.Size = New Size(150, 31)
+        password.TabIndex = 9
+        ' 
+        ' Button2
+        ' 
+        Button2.BackColor = Color.Transparent
+        Button2.FlatAppearance.BorderColor = Color.Red
+        Button2.FlatAppearance.BorderSize = 0
+        Button2.FlatStyle = FlatStyle.Flat
+        Button2.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button2.ForeColor = Color.Red
+        Button2.Location = New Point(603, 23)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(40, 36)
+        Button2.TabIndex = 10
+        Button2.Text = "X"
+        Button2.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources.Modern_Initial_E_Logo
+        PictureBox1.Location = New Point(197, 52)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(290, 333)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 11
+        PictureBox1.TabStop = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackgroundImage = My.Resources.Resources.download
+        Panel1.Controls.Add(Button2)
+        Panel1.Dock = DockStyle.Top
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(712, 88)
+        Panel1.TabIndex = 12
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        BackColor = Color.White
+        ClientSize = New Size(712, 694)
+        Controls.Add(Panel1)
+        Controls.Add(password)
+        Controls.Add(username)
         Controls.Add(Button1)
         Controls.Add(LinkLabel1)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
+        Controls.Add(PictureBox1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "Form1"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "WELCOME"
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents username As TextBox
+    Friend WithEvents password As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
 
 End Class
