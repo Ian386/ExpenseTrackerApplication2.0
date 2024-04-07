@@ -1,7 +1,9 @@
 ﻿Imports System.Text.RegularExpressions
 Imports System.Data.SqlClient
+
 Imports Microsoft.Data.SqlClient
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+
 
 Public Class Form2
 
@@ -19,15 +21,18 @@ Public Class Form2
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
+
         con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
         con.Open()
 
         Dim email As String = Me.Email.Text
         Dim pattern As String = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
         If Not Regex.IsMatch(email, pattern) Then
             MessageBox.Show("Invalid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
+
 
         If cfm_password.Text <> password.Text Then
             MessageBox.Show("Password Mismatch.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -70,6 +75,7 @@ Public Class Form2
         Me.Close()
         Dim form4Instance As New Form4(_userId)
         form4Instance.Show()
+
     End Sub
 
 End Class

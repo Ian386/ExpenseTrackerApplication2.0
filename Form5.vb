@@ -2,6 +2,7 @@
 Imports Microsoft.Data.SqlClient
 Public Class Form5
 
+
     Private _userId As Integer
 
     ' Constructor with userId parameter
@@ -11,6 +12,7 @@ Public Class Form5
     End Sub
     'connect to database
     Dim ConStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
+
     Dim SqlConn As New SqlConnection(ConStr)
     'declare variables to be used within the whole project
     Private Shared _budgetAmount As Decimal
@@ -133,6 +135,7 @@ Public Class Form5
     End Sub
     Public Function GetLastBudgetID() As Integer
         Dim lastBudgetID As Integer = -1 ' Default value if no record is found
+
 
         Try
             Using sqlConnection As New SqlConnection(ConStr)

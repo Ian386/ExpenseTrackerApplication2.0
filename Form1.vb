@@ -1,4 +1,6 @@
+
 ﻿Imports Microsoft.Data.SqlClient
+
 
 Public Class Form1
     Public _userId As Integer
@@ -12,6 +14,7 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
+
 
         con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
         con.Open()
@@ -29,6 +32,7 @@ Public Class Form1
             Dim form4 As New Form4(userId)
             Me.Hide()
             form4.Show()
+
         Else
             MessageBox.Show("Invalid username or password")
             username.Clear()
@@ -38,8 +42,11 @@ Public Class Form1
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+
         Dim form2instance As New Form2(_userId) ' Pass _userId instead of userId
         form2instance.Show()
+        Me.Hide()
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

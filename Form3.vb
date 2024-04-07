@@ -21,7 +21,9 @@ Public Class Form3
     Private enteredAmount As Decimal = 0
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
+
         sqlConn = New SqlConnection(connStr)
         sqlConn.Open()
         ' Populate ComboBox with currency options
@@ -255,23 +257,31 @@ Public Class Form3
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         Dim form4Instance As New Form7(_userId)
         form4Instance.Show()
+
         Me.Close()
     End Sub
     Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
         btnBudget.FlatAppearance.BorderSize = 0
+
         Dim form5Instance As New Form5(_userId)
+
         form5Instance.Show()
     End Sub
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         btnReports.FlatAppearance.BorderSize = 0
+
         Dim form7Instance As New Form7(_userId)
+
         form7Instance.Show()
     End Sub
     Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
         btnHelp.FlatAppearance.BorderSize = 0
+
         Dim form8Instance As New Form8(_userId)
+
         form8Instance.Show()
     End Sub
 

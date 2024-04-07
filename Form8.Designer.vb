@@ -83,35 +83,43 @@ Partial Class Form8
         ' Label1
         ' 
         Label1.AutoSize = True
+
         Label1.Location = New Point(261, 90)
+
         Label1.Name = "Label1"
-        Label1.Size = New Size(86, 15)
+        Label1.Size = New Size(131, 25)
         Label1.TabIndex = 0
         Label1.Text = "Profile Settings"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
+
         Label3.Location = New Point(261, 359)
+
         Label3.Name = "Label3"
-        Label3.Size = New Size(94, 15)
+        Label3.Size = New Size(143, 25)
         Label3.TabIndex = 2
         Label3.Text = "Security Settings"
         ' 
         ' ProfilePicture
         ' 
+
         ProfilePicture.Location = New Point(3, 3)
         ProfilePicture.Name = "ProfilePicture"
         ProfilePicture.Size = New Size(72, 52)
+
         ProfilePicture.TabIndex = 4
         ProfilePicture.TabStop = False
         ' 
         ' txtName
         ' 
+
         txtName.Location = New Point(6, 42)
         txtName.Multiline = True
         txtName.Name = "txtName"
         txtName.Size = New Size(148, 24)
+
         txtName.TabIndex = 5
         ' 
         ' GroupBox1
@@ -131,14 +139,17 @@ Partial Class Form8
         GroupBox1.Controls.Add(Label6)
         GroupBox1.Controls.Add(Label5)
         GroupBox1.Controls.Add(txtName)
+
         GroupBox1.Location = New Point(380, 90)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(433, 250)
+
         GroupBox1.TabIndex = 6
         GroupBox1.TabStop = False
         GroupBox1.Text = "My Details"
         ' 
         ' btnShow
+
         ' 
         btnShow.BackColor = Color.White
         btnShow.FlatAppearance.BorderColor = Color.Chartreuse
@@ -248,41 +259,50 @@ Partial Class Form8
         txtLastName.Multiline = True
         txtLastName.Name = "txtLastName"
         txtLastName.Size = New Size(148, 24)
+
         txtLastName.TabIndex = 9
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
+
         Label6.Location = New Point(6, 79)
         Label6.Name = "Label6"
         Label6.Size = New Size(90, 15)
+
         Label6.TabIndex = 8
         Label6.Text = "New Last Name"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
+
         Label5.Location = New Point(6, 24)
         Label5.Name = "Label5"
         Label5.Size = New Size(87, 15)
+
         Label5.TabIndex = 7
         Label5.Text = "New Username"
         ' 
         ' btnChangeProfilePhoto
         ' 
+
         btnChangeProfilePhoto.Location = New Point(161, 33)
         btnChangeProfilePhoto.Name = "btnChangeProfilePhoto"
         btnChangeProfilePhoto.Size = New Size(146, 31)
+
         btnChangeProfilePhoto.TabIndex = 11
         btnChangeProfilePhoto.Text = "Change Profile Photo"
         btnChangeProfilePhoto.UseVisualStyleBackColor = True
         ' 
         ' txtDisplayName
         ' 
+
         txtDisplayName.Location = New Point(80, 3)
         txtDisplayName.Multiline = True
         txtDisplayName.Name = "txtDisplayName"
         txtDisplayName.Size = New Size(228, 27)
+
         txtDisplayName.TabIndex = 11
         ' 
         ' GroupBox3
@@ -299,19 +319,23 @@ Partial Class Form8
         GroupBox3.Controls.Add(Label10)
         GroupBox3.Controls.Add(txtNewPassword)
         GroupBox3.Controls.Add(txtCurrentPassword)
+
         GroupBox3.Location = New Point(375, 359)
         GroupBox3.Name = "GroupBox3"
         GroupBox3.Size = New Size(438, 221)
+
         GroupBox3.TabIndex = 13
         GroupBox3.TabStop = False
         GroupBox3.Text = "Change Password"
         ' 
         ' txtUserName1
         ' 
+
         txtUserName1.Location = New Point(208, 20)
         txtUserName1.Multiline = True
         txtUserName1.Name = "txtUserName1"
         txtUserName1.Size = New Size(148, 24)
+
         txtUserName1.TabIndex = 35
         ' 
         ' btnSee
@@ -320,9 +344,11 @@ Partial Class Form8
         btnSee.FlatAppearance.BorderColor = Color.Chartreuse
         btnSee.FlatAppearance.BorderSize = 2
         btnSee.FlatStyle = FlatStyle.Flat
+
         btnSee.Location = New Point(363, 50)
         btnSee.Name = "btnSee"
         btnSee.Size = New Size(60, 27)
+
         btnSee.TabIndex = 39
         btnSee.Text = "Show"
         btnSee.UseVisualStyleBackColor = False
@@ -333,9 +359,11 @@ Partial Class Form8
         btnS2.FlatAppearance.BorderColor = Color.Chartreuse
         btnS2.FlatAppearance.BorderSize = 2
         btnS2.FlatStyle = FlatStyle.Flat
+
         btnS2.Location = New Point(363, 97)
         btnS2.Name = "btnS2"
         btnS2.Size = New Size(60, 26)
+
         btnS2.TabIndex = 36
         btnS2.Text = "Show"
         btnS2.UseVisualStyleBackColor = False
@@ -346,29 +374,35 @@ Partial Class Form8
         btnS3.FlatAppearance.BorderColor = Color.Chartreuse
         btnS3.FlatAppearance.BorderSize = 2
         btnS3.FlatStyle = FlatStyle.Flat
+
         btnS3.Location = New Point(363, 148)
         btnS3.Name = "btnS3"
         btnS3.Size = New Size(60, 26)
         btnS3.TabIndex = 38
         btnS3.Text = "Show"
         btnS3.UseVisualStyleBackColor = False
+
         ' 
         ' Label14
         ' 
         Label14.AutoSize = True
+<
         Label14.Location = New Point(26, 142)
         Label14.Name = "Label14"
         Label14.Size = New Size(104, 15)
+
         Label14.TabIndex = 18
         Label14.Text = "Confirm Password"
         ' 
         ' txtConfirmPassword
         ' 
+
         txtConfirmPassword.Location = New Point(207, 152)
         txtConfirmPassword.Multiline = True
         txtConfirmPassword.Name = "txtConfirmPassword"
         txtConfirmPassword.PasswordChar = "*"c
         txtConfirmPassword.Size = New Size(148, 24)
+
         txtConfirmPassword.TabIndex = 37
         ' 
         ' btnChangePassword
@@ -377,9 +411,11 @@ Partial Class Form8
         btnChangePassword.BackgroundImageLayout = ImageLayout.Stretch
         btnChangePassword.FlatAppearance.BorderSize = 0
         btnChangePassword.FlatStyle = FlatStyle.Flat
+
         btnChangePassword.Location = New Point(26, 185)
         btnChangePassword.Name = "btnChangePassword"
         btnChangePassword.Size = New Size(89, 22)
+
         btnChangePassword.TabIndex = 15
         btnChangePassword.Text = "Submit"
         btnChangePassword.UseVisualStyleBackColor = True
@@ -387,31 +423,38 @@ Partial Class Form8
         ' Label2
         ' 
         Label2.AutoSize = True
+
         Label2.Location = New Point(27, 101)
         Label2.Name = "Label2"
         Label2.Size = New Size(84, 15)
+
         Label2.TabIndex = 14
         Label2.Text = "New Password"
         ' 
         ' Label9
         ' 
         Label9.AutoSize = True
+
         Label9.Location = New Point(26, 56)
         Label9.Name = "Label9"
         Label9.Size = New Size(100, 15)
+
         Label9.TabIndex = 15
         Label9.Text = "Current Password"
         ' 
         ' Label10
         ' 
         Label10.AutoSize = True
+
         Label10.Location = New Point(26, 22)
         Label10.Name = "Label10"
         Label10.Size = New Size(60, 15)
+
         Label10.TabIndex = 16
         Label10.Text = "Username"
         ' 
         ' txtNewPassword
+
         ' 
         txtNewPassword.Location = New Point(207, 101)
         txtNewPassword.Multiline = True
@@ -427,14 +470,17 @@ Partial Class Form8
         txtCurrentPassword.Name = "txtCurrentPassword"
         txtCurrentPassword.PasswordChar = "*"c
         txtCurrentPassword.Size = New Size(148, 24)
+
         txtCurrentPassword.TabIndex = 28
         ' 
         ' Label11
         ' 
         Label11.AutoSize = True
+
         Label11.Location = New Point(270, 614)
         Label11.Name = "Label11"
         Label11.Size = New Size(74, 15)
+
         Label11.TabIndex = 14
         Label11.Text = "App Settings"
         ' 
@@ -505,14 +551,17 @@ Partial Class Form8
         Panel2.Size = New Size(155, 661)
         Panel2.TabIndex = 31
         ' 
+
         ' PictureBox1
         ' 
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+
         PictureBox1.Location = New Point(26, 31)
         PictureBox1.Margin = New Padding(2)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(99, 74)
+
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 31
         PictureBox1.TabStop = False
@@ -521,10 +570,12 @@ Partial Class Form8
         ' 
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+
         PictureBox2.Location = New Point(26, 304)
         PictureBox2.Margin = New Padding(2)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(27, 22)
+
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 24
         PictureBox2.TabStop = False
@@ -534,10 +585,12 @@ Partial Class Form8
         PictureBox6.BackColor = Color.Transparent
         PictureBox6.BackgroundImageLayout = ImageLayout.Center
         PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
+
         PictureBox6.Location = New Point(26, 181)
         PictureBox6.Margin = New Padding(2)
         PictureBox6.Name = "PictureBox6"
         PictureBox6.Size = New Size(27, 22)
+
         PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox6.TabIndex = 23
         PictureBox6.TabStop = False
@@ -546,10 +599,12 @@ Partial Class Form8
         ' 
         PictureBox8.BackColor = Color.Transparent
         PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
+
         PictureBox8.Location = New Point(26, 242)
         PictureBox8.Margin = New Padding(2)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(27, 22)
+
         PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox8.TabIndex = 20
         PictureBox8.TabStop = False
@@ -563,10 +618,12 @@ Partial Class Form8
         btnClose.FlatStyle = FlatStyle.Flat
         btnClose.Font = New Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnClose.ForeColor = Color.Black
+
         btnClose.Location = New Point(46, 379)
         btnClose.Margin = New Padding(2)
         btnClose.Name = "btnClose"
         btnClose.Size = New Size(57, 26)
+
         btnClose.TabIndex = 16
         btnClose.Text = "Exit"
         btnClose.UseVisualStyleBackColor = False
@@ -576,18 +633,22 @@ Partial Class Form8
         Panel1.Controls.Add(txtDisplayName)
         Panel1.Controls.Add(btnChangeProfilePhoto)
         Panel1.Controls.Add(ProfilePicture)
+
         Panel1.Location = New Point(498, 8)
         Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(316, 67)
+
         Panel1.TabIndex = 32
         ' 
         ' Form8
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
+
         ClientSize = New Size(885, 661)
+
         Controls.Add(Panel1)
         Controls.Add(Panel2)
         Controls.Add(btnEditWallets)
@@ -597,7 +658,9 @@ Partial Class Form8
         Controls.Add(Label3)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
+
         Margin = New Padding(2)
+
         Name = "Form8"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Form8"
@@ -680,4 +743,6 @@ Partial Class Form8
     Friend WithEvents Panel1 As Panel
 
 
+
 End Class
+

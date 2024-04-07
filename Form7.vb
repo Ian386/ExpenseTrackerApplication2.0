@@ -71,6 +71,7 @@ Public Class Form7
         End Using
     End Sub
 
+
     Private Sub cbWalletSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWalletSelector.SelectedIndexChanged
         If cbWalletSelector.SelectedItem IsNot Nothing Then
             lblWalletName.Text = cbWalletSelector.SelectedItem.ToString()
@@ -224,6 +225,7 @@ Public Class Form7
         Dim form8Instance As New Form8(_userId)
         form8Instance.Show()
         Me.Close()
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -234,4 +236,6 @@ Public Class Form7
         End If
     End Sub
 
+
 End Class
+

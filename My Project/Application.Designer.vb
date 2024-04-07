@@ -33,8 +33,10 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
+
             Dim mainForm As New Form1(UserId)
             Me.MainForm = mainForm
+
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

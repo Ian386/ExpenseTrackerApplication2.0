@@ -22,6 +22,7 @@ Partial Class Form7
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form7))
         Label1 = New Label()
         Button2 = New Button()
@@ -58,12 +59,14 @@ Partial Class Form7
         Panel2.SuspendLayout()
         SuspendLayout()
         ' 
+
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Freestyle Script", 20F, FontStyle.Underline)
         Label1.ForeColor = Color.White
+
         Label1.Location = New Point(224, 27)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
@@ -71,6 +74,7 @@ Partial Class Form7
         Label1.TabIndex = 4
         Label1.Text = "Monthly Spend Per Category"
         ' 
+
         ' Button2
         ' 
         Button2.BackColor = Color.Transparent
@@ -79,14 +83,17 @@ Partial Class Form7
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.Red
+
         Button2.Location = New Point(879, 11)
         Button2.Margin = New Padding(2)
         Button2.Name = "Button2"
         Button2.Size = New Size(28, 22)
+
         Button2.TabIndex = 42
         Button2.Text = "X"
         Button2.UseVisualStyleBackColor = False
         ' 
+
         ' cbWalletSelector
         ' 
         cbWalletSelector.FormattingEnabled = True
@@ -373,10 +380,12 @@ Partial Class Form7
         Panel2.Size = New Size(155, 570)
         Panel2.TabIndex = 49
         ' 
+
         ' Form7
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+
         BackColor = SystemColors.ControlLightLight
         ClientSize = New Size(918, 570)
         Controls.Add(Panel2)
@@ -430,4 +439,5 @@ Partial Class Form7
     Friend WithEvents btnWallets As Button
     Friend WithEvents btnHome As Button
     Friend WithEvents Panel2 As Panel
+
 End Class

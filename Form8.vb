@@ -2,6 +2,7 @@
 Imports System.Data.SqlClient
 Imports Microsoft.Data.SqlClient
 
+
 Public Class Form8
 
     Private _userId As Integer
@@ -22,6 +23,7 @@ Public Class Form8
         If openFileDialog.ShowDialog() = DialogResult.OK Then
             Try
                 Dim selectedFilePath As String = openFileDialog.FileName
+
 
 
                 Dim originalImage As New Bitmap(selectedFilePath)
@@ -76,6 +78,7 @@ Public Class Form8
             End Using
         End Using
 
+
         Dim passwordPattern As String = "^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$"
         If Not Regex.IsMatch(txtNewPassword.Text, passwordPattern) Then
             MessageBox.Show("Password must contain:" & vbCrLf &
@@ -84,10 +87,12 @@ Public Class Form8
                 "- One number" & vbCrLf &
                 "- At least 8 characters",
                 "Password Requirements", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             txtNewPassword.Clear()
             txtConfirmPassword.Clear()
             Return
         End If
+
 
 
 
@@ -114,17 +119,22 @@ Public Class Form8
         txtConfirmPassword.Clear()
         txtUserName1.Clear()
         txtCurrentPassword.Clear()
+
         MessageBox.Show("Password changed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
+
         Dim form4Instance As New Form4(_userId)
+
         form4Instance.Show()
         Me.Close()
     End Sub
     Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
 
+
         Dim form5Instance As New Form5(_userId)
+
         form5Instance.Show()
         Me.Close()
     End Sub
@@ -133,10 +143,12 @@ Public Class Form8
 
         Dim form7Instance As New Form7(_userId)
         form7Instance.Show()
+
         Me.Close()
     End Sub
 
     Private Sub btnEditWallets_Click(sender As Object, e As EventArgs) Handles btnEditWallets.Click
+
         Dim form3Instance As New Form3(_userId)
         form3Instance.Show()
         Close()
@@ -296,6 +308,7 @@ Public Class Form8
     Private Sub btnS3_Click(sender As Object, e As EventArgs) Handles btnS3.Click
         TogglePasswordVisibility(txtConfirmPassword, btnS3)
     End Sub
+
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         If MsgBox("Are you sure you want to exit?", vbExclamation + vbYesNo) = vbYes Then

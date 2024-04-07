@@ -32,6 +32,7 @@ Public Class Form4
         form3Instance.Show()
         Me.Close()
     End Sub
+
     Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
         btnBudget.FlatAppearance.BorderSize = 0
         Dim form5Instance As New Form5(_userId)

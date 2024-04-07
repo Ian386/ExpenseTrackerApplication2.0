@@ -69,7 +69,7 @@ Partial Class Form5
         Label2.ForeColor = Color.Black
         Label2.Location = New Point(833, 376)
         Label2.Name = "Label2"
-        Label2.Size = New Size(144, 25)
+        Label2.Size = New Size(95, 15)
         Label2.TabIndex = 49
         Label2.Text = "Other expenses"
         ' 
@@ -80,7 +80,7 @@ Partial Class Form5
         lbHealthCare.ForeColor = Color.Black
         lbHealthCare.Location = New Point(557, 376)
         lbHealthCare.Name = "lbHealthCare"
-        lbHealthCare.Size = New Size(112, 25)
+        lbHealthCare.Size = New Size(72, 15)
         lbHealthCare.TabIndex = 48
         lbHealthCare.Text = "Health Care"
         ' 
@@ -91,7 +91,7 @@ Partial Class Form5
         Label3.ForeColor = Color.Black
         Label3.Location = New Point(833, 93)
         Label3.Name = "Label3"
-        Label3.Size = New Size(149, 25)
+        Label3.Size = New Size(97, 15)
         Label3.TabIndex = 47
         Label3.Text = "Enjoyment/Give"
         ' 
@@ -104,7 +104,7 @@ Partial Class Form5
         clbOtherExpenses.Items.AddRange(New Object() {"Fee & charge", "Investments", "Kids", "Other"})
         clbOtherExpenses.Location = New Point(833, 416)
         clbOtherExpenses.Name = "clbOtherExpenses"
-        clbOtherExpenses.Size = New Size(198, 120)
+        clbOtherExpenses.Size = New Size(140, 61)
         clbOtherExpenses.TabIndex = 46
         ' 
         ' clbHealthCare
@@ -116,7 +116,7 @@ Partial Class Form5
         clbHealthCare.Items.AddRange(New Object() {"Doctor", "Sport", "Insurance", "Gym Membership"})
         clbHealthCare.Location = New Point(557, 416)
         clbHealthCare.Name = "clbHealthCare"
-        clbHealthCare.Size = New Size(236, 120)
+        clbHealthCare.Size = New Size(166, 61)
         clbHealthCare.TabIndex = 45
         ' 
         ' clbEnjoyments
@@ -128,7 +128,7 @@ Partial Class Form5
         clbEnjoyments.Items.AddRange(New Object() {"Entertainment", "Fashion", "Travel", "Beauty Care", "Party", "Gift", "Donation"})
         clbEnjoyments.Location = New Point(833, 132)
         clbEnjoyments.Name = "clbEnjoyments"
-        clbEnjoyments.Size = New Size(198, 207)
+        clbEnjoyments.Size = New Size(140, 118)
         clbEnjoyments.TabIndex = 44
         ' 
         ' lbBasics
@@ -138,7 +138,7 @@ Partial Class Form5
         lbBasics.ForeColor = Color.Black
         lbBasics.Location = New Point(557, 93)
         lbBasics.Name = "lbBasics"
-        lbBasics.Size = New Size(64, 25)
+        lbBasics.Size = New Size(40, 15)
         lbBasics.TabIndex = 43
         lbBasics.Text = "Basics"
         ' 
@@ -151,7 +151,7 @@ Partial Class Form5
         clbBasics.Items.AddRange(New Object() {"Food & Drinks", "Bill", "Transport", "House Rent", "Fix & Maintenance", "Utilities", "Groceries"})
         clbBasics.Location = New Point(557, 132)
         clbBasics.Name = "clbBasics"
-        clbBasics.Size = New Size(236, 207)
+        clbBasics.Size = New Size(166, 118)
         clbBasics.TabIndex = 28
         ' 
         ' btnSaveNewBudget
@@ -204,10 +204,12 @@ Partial Class Form5
         cbChooseWalllet.Font = New Font("Tahoma", 9F)
         cbChooseWalllet.ForeColor = Color.Black
         cbChooseWalllet.FormattingEnabled = True
+
         cbChooseWalllet.Items.AddRange(New Object() {"demowall1", "demoo2"})
+
         cbChooseWalllet.Location = New Point(201, 271)
         cbChooseWalllet.Name = "cbChooseWalllet"
-        cbChooseWalllet.Size = New Size(210, 30)
+        cbChooseWalllet.Size = New Size(148, 22)
         cbChooseWalllet.TabIndex = 39
         ' 
         ' lbChooseWallet
@@ -218,7 +220,7 @@ Partial Class Form5
         lbChooseWallet.ForeColor = Color.Black
         lbChooseWallet.Location = New Point(32, 276)
         lbChooseWallet.Name = "lbChooseWallet"
-        lbChooseWallet.Size = New Size(135, 25)
+        lbChooseWallet.Size = New Size(87, 15)
         lbChooseWallet.TabIndex = 38
         lbChooseWallet.Text = "Choose wallet:"
         ' 
@@ -229,7 +231,7 @@ Partial Class Form5
         txtEndDate.ForeColor = Color.Black
         txtEndDate.Location = New Point(201, 508)
         txtEndDate.Name = "txtEndDate"
-        txtEndDate.Size = New Size(210, 29)
+        txtEndDate.Size = New Size(148, 22)
         txtEndDate.TabIndex = 37
         txtEndDate.Text = "yyyy-MM-dd"
         ' 
@@ -241,7 +243,7 @@ Partial Class Form5
         lbEndDate.ForeColor = Color.Black
         lbEndDate.Location = New Point(32, 512)
         lbEndDate.Name = "lbEndDate"
-        lbEndDate.Size = New Size(92, 25)
+        lbEndDate.Size = New Size(58, 15)
         lbEndDate.TabIndex = 36
         lbEndDate.Text = "End date:"
         ' 
@@ -252,7 +254,7 @@ Partial Class Form5
         txtStartDate.ForeColor = Color.Black
         txtStartDate.Location = New Point(201, 423)
         txtStartDate.Name = "txtStartDate"
-        txtStartDate.Size = New Size(210, 29)
+        txtStartDate.Size = New Size(148, 22)
         txtStartDate.TabIndex = 35
         txtStartDate.Text = "yyyy-MM-dd"
         ' 
@@ -264,7 +266,7 @@ Partial Class Form5
         lbStartDate.ForeColor = Color.Black
         lbStartDate.Location = New Point(33, 427)
         lbStartDate.Name = "lbStartDate"
-        lbStartDate.Size = New Size(102, 25)
+        lbStartDate.Size = New Size(66, 15)
         lbStartDate.TabIndex = 34
         lbStartDate.Text = "Start date:"
         ' 
@@ -277,7 +279,7 @@ Partial Class Form5
         cbTimeRange.Items.AddRange(New Object() {"One time", "Weekly", "Monthly", "Yearly"})
         cbTimeRange.Location = New Point(201, 346)
         cbTimeRange.Name = "cbTimeRange"
-        cbTimeRange.Size = New Size(210, 30)
+        cbTimeRange.Size = New Size(148, 22)
         cbTimeRange.TabIndex = 33
         ' 
         ' lbTimeRange
@@ -288,7 +290,7 @@ Partial Class Form5
         lbTimeRange.ForeColor = Color.Black
         lbTimeRange.Location = New Point(32, 351)
         lbTimeRange.Name = "lbTimeRange"
-        lbTimeRange.Size = New Size(118, 25)
+        lbTimeRange.Size = New Size(76, 15)
         lbTimeRange.TabIndex = 32
         lbTimeRange.Text = "Time Range:"
         ' 
@@ -299,7 +301,7 @@ Partial Class Form5
         txtBudgetAmount.ForeColor = Color.Black
         txtBudgetAmount.Location = New Point(201, 197)
         txtBudgetAmount.Name = "txtBudgetAmount"
-        txtBudgetAmount.Size = New Size(210, 29)
+        txtBudgetAmount.Size = New Size(148, 22)
         txtBudgetAmount.TabIndex = 31
         ' 
         ' lbAmount
@@ -310,7 +312,7 @@ Partial Class Form5
         lbAmount.ForeColor = Color.Black
         lbAmount.Location = New Point(32, 201)
         lbAmount.Name = "lbAmount"
-        lbAmount.Size = New Size(86, 25)
+        lbAmount.Size = New Size(55, 15)
         lbAmount.TabIndex = 30
         lbAmount.Text = "Amount:"
         ' 
@@ -321,7 +323,7 @@ Partial Class Form5
         txtEnterBudgetName.ForeColor = Color.Black
         txtEnterBudgetName.Location = New Point(201, 127)
         txtEnterBudgetName.Name = "txtEnterBudgetName"
-        txtEnterBudgetName.Size = New Size(210, 29)
+        txtEnterBudgetName.Size = New Size(148, 22)
         txtEnterBudgetName.TabIndex = 29
         ' 
         ' lbBudgetName
@@ -332,7 +334,7 @@ Partial Class Form5
         lbBudgetName.ForeColor = Color.Black
         lbBudgetName.Location = New Point(32, 128)
         lbBudgetName.Name = "lbBudgetName"
-        lbBudgetName.Size = New Size(134, 25)
+        lbBudgetName.Size = New Size(87, 15)
         lbBudgetName.TabIndex = 27
         lbBudgetName.Text = "Budget Name:"
         ' 
@@ -349,7 +351,7 @@ Partial Class Form5
         ' 
         ' Form5
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1072, 674)
