@@ -1,16 +1,14 @@
 
 ﻿Imports Microsoft.Data.SqlClient
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+
 
 Public Class Form1
+    Public _userId As Integer
 
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
+    ' Constructor with userId parameter
+    Public Sub New(userId As Integer)
+        InitializeComponent()
+        _userId = userId
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -18,17 +16,23 @@ Public Class Form1
         Dim cmd As New SqlCommand
 
 
-        con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
-
+        con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
         con.Open()
-        Dim stmt As String = "SELECT * FROM user_table WHERE username = '" & username.Text & "' AND password = '" & password.Text & "'"
+        Dim stmt As String = "SELECT user_id FROM user_table WHERE username = @username AND password = @password"
         cmd = New SqlCommand(stmt, con)
+        cmd.Parameters.AddWithValue("@username", username.Text)
+        cmd.Parameters.AddWithValue("@password", password.Text)
+
+        Dim userId As Integer = -1
         Dim dr As SqlDataReader = cmd.ExecuteReader()
         If dr.Read() Then
-            MessageBox.Show("Login Successful")
-            Dim form4 As New Form4
-            form4.Show()
+            userId = Convert.ToInt32(dr("user_id"))
+            _userId = userId ' Set _userId
+            MessageBox.Show("Login Successful.")
+            Dim form4 As New Form4(userId)
             Me.Hide()
+            form4.Show()
+
         Else
             MessageBox.Show("Invalid username or password")
             username.Clear()
@@ -38,9 +42,11 @@ Public Class Form1
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim form2 As New Form2
-        form2.Show()
+
+        Dim form2instance As New Form2(_userId) ' Pass _userId instead of userId
+        form2instance.Show()
         Me.Hide()
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

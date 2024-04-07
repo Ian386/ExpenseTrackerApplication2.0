@@ -1,8 +1,18 @@
 ﻿Imports System.Data.SqlClient
 Imports Microsoft.Data.SqlClient
 Public Class Form5
+
+
+    Private _userId As Integer
+
+    ' Constructor with userId parameter
+    Public Sub New(userId As Integer)
+        InitializeComponent()
+        _userId = userId
+    End Sub
     'connect to database
-    Dim ConStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
+    Dim ConStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
+
     Dim SqlConn As New SqlConnection(ConStr)
     'declare variables to be used within the whole project
     Private Shared _budgetAmount As Decimal
@@ -73,7 +83,8 @@ Public Class Form5
 
     Private Sub btnGoBackHome_Click(sender As Object, e As EventArgs) Handles btnGoBackHome.Click
         Me.Close()
-        Form4.Show()
+        Dim form4Instance As New Form4(_userId)
+        form4Instance.Show()
     End Sub
 
     Private Sub txtStartDate_TextChanged(sender As Object, e As EventArgs) Handles txtStartDate.TextChanged
@@ -124,6 +135,7 @@ Public Class Form5
     End Sub
     Public Function GetLastBudgetID() As Integer
         Dim lastBudgetID As Integer = -1 ' Default value if no record is found
+
 
         Try
             Using sqlConnection As New SqlConnection(ConStr)
@@ -243,7 +255,8 @@ Public Class Form5
         End Try
         'close the form and open the next form
         Me.Close()
-        Form4.Show()
+        Dim form4Instance As New Form4(_userId)
+        form4Instance.Show()
     End Sub
 
     Private Sub cbTimeRange_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTimeRange.SelectedIndexChanged

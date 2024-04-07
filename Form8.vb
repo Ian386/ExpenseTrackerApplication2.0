@@ -2,37 +2,18 @@
 Imports System.Data.SqlClient
 Imports Microsoft.Data.SqlClient
 
+
 Public Class Form8
 
-    Private connectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
+    Private _userId As Integer
 
-    'Not done but works
-    Private Sub Form8_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Dim currentUsername As String = "username"
-
-
-        Dim firstName As String = ""
-        Dim lastName As String = ""
-    
-        Using connection As New SqlConnection(connectionString)
-            Dim query As String = "Select firstname, lastname FROM user_table WHERE email = @Username"
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@Username", currentUsername)
-                connection.Open()
-                Using reader As SqlDataReader = command.ExecuteReader()
-                    If reader.Read() Then
-                        firstName = Convert.ToString(reader("firstname"))
-                        lastName = Convert.ToString(reader("lastname"))
-                    End If
-                End Using
-            End Using
-        End Using
-
-
-
-        txtDisplayName.Text = $"{firstName} {lastName}"
+    ' Constructor with userId parameter
+    Public Sub New(userId As Integer)
+        InitializeComponent()
+        _userId = userId
     End Sub
+
+    Private connectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
 
     Private Sub btnChangeProfilePhoto_Click(sender As Object, e As EventArgs) Handles btnChangeProfilePhoto.Click
         Dim openFileDialog As New OpenFileDialog()
@@ -46,7 +27,6 @@ Public Class Form8
 
 
                 Dim originalImage As New Bitmap(selectedFilePath)
-
 
 
                 Dim resizedImage As Bitmap = ResizeImage(originalImage, ProfilePicture.Width, ProfilePicture.Height)
@@ -98,18 +78,22 @@ Public Class Form8
             End Using
         End Using
 
-        Dim passwordPattern As String = "^(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$"
+
+        Dim passwordPattern As String = "^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$"
         If Not Regex.IsMatch(txtNewPassword.Text, passwordPattern) Then
             MessageBox.Show("Password must contain:" & vbCrLf &
-                        "- At least one uppercase letter" & vbCrLf &
-                        "- A special character" & vbCrLf &
-                        "- One number" & vbCrLf &
-                        "- At least 8 characters",
-                        "Password Requirements", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                "- At least one uppercase letter" & vbCrLf &
+                "- A special character" & vbCrLf &
+                "- One number" & vbCrLf &
+                "- At least 8 characters",
+                "Password Requirements", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             txtNewPassword.Clear()
             txtConfirmPassword.Clear()
             Return
         End If
+
+
 
 
         If txtNewPassword.Text <> txtConfirmPassword.Text Then
@@ -133,40 +117,46 @@ Public Class Form8
 
         txtNewPassword.Clear()
         txtConfirmPassword.Clear()
+        txtUserName1.Clear()
+        txtCurrentPassword.Clear()
+
         MessageBox.Show("Password changed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
-        Dim form4Instance As New Form4()
+
+        Dim form4Instance As New Form4(_userId)
+
         form4Instance.Show()
         Me.Close()
     End Sub
     Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
 
-        Dim form5Instance As New Form5()
+
+        Dim form5Instance As New Form5(_userId)
+
         form5Instance.Show()
         Me.Close()
     End Sub
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
 
-
-        Dim form7Instance As New Form7()
+        Dim form7Instance As New Form7(_userId)
         form7Instance.Show()
 
         Me.Close()
     End Sub
 
     Private Sub btnEditWallets_Click(sender As Object, e As EventArgs) Handles btnEditWallets.Click
-        Dim form3Instance As New Form3()
+
+        Dim form3Instance As New Form3(_userId)
         form3Instance.Show()
-        Me.Close()
+        Close()
     End Sub
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        Dim form4Instance As New Form4()
+        Dim form4Instance As New Form4(_userId)
         form4Instance.Show()
         Me.Close()
-
     End Sub
 
     Private Sub btnSubmitProfile_Click(sender As Object, e As EventArgs) Handles btnSubmitProfile.Click
@@ -206,97 +196,10 @@ Public Class Form8
 
         If UpdateUserProfile(currentUsername, newUsername, newFirstName, newLastName, newEmailAddress) Then
             MessageBox.Show("Profile updated successfully.")
-            txtName.Clear()
-            txtFirstName.Clear()
-            txtLastName.Clear()
-            txtEmailAddress.Clear()
-            txtUser.Clear()
-            txtPass.Clear()
         Else
             MessageBox.Show("Failed to update profile. Please try again.")
         End If
-
-
-    Private Function ValidateUser(username As String, password As String) As Boolean
-        Using connection As New SqlConnection(connectionString)
-            Dim query As String = "SELECT COUNT(*) FROM user_table WHERE username = @Username AND password = @Password"
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@Username", username)
-                command.Parameters.AddWithValue("@Password", password)
-                connection.Open()
-                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
-                Return count > 0
-            End Using
-        End Using
-    End Function
-
-    Private Function UsernameExists(username As String) As Boolean
-        Using connection As New SqlConnection(connectionString)
-            Dim query As String = "SELECT COUNT(*) FROM user_table WHERE username = @Username"
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@Username", username)
-                connection.Open()
-                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
-                Return count > 0
-            End Using
-        End Using
-    End Function
-
-    Private Function UpdateUserProfile(currentUsername As String, newUsername As String, newFirstName As String, newLastName As String, newEmailAddress As String) As Boolean
-        Using connection As New SqlConnection(connectionString)
-            Dim query As String = "UPDATE user_table SET "
-            Dim setClause As New List(Of String)()
-
-            If Not String.IsNullOrEmpty(newUsername) Then
-                setClause.Add("username = @NewUsername")
-            End If
-            If Not String.IsNullOrEmpty(newFirstName) Then
-                setClause.Add("firstname = @NewFirstName")
-            End If
-            If Not String.IsNullOrEmpty(newLastName) Then
-                setClause.Add("lastname = @NewLastName")
-            End If
-            If Not String.IsNullOrEmpty(newEmailAddress) Then
-                setClause.Add("email = @NewEmailAddress")
-            End If
-
-            query &= String.Join(", ", setClause)
-
-            query &= " WHERE username = @CurrentUsername"
-
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@CurrentUsername", currentUsername)
-                If Not String.IsNullOrEmpty(newUsername) Then
-                    command.Parameters.AddWithValue("@NewUsername", newUsername)
-                End If
-                If Not String.IsNullOrEmpty(newFirstName) Then
-                    command.Parameters.AddWithValue("@NewFirstName", newFirstName)
-                End If
-                If Not String.IsNullOrEmpty(newLastName) Then
-                    command.Parameters.AddWithValue("@NewLastName", newLastName)
-                End If
-                If Not String.IsNullOrEmpty(newEmailAddress) Then
-                    command.Parameters.AddWithValue("@NewEmailAddress", newEmailAddress)
-                End If
-
-                connection.Open()
-                Dim rowsAffected As Integer = command.ExecuteNonQuery()
-                Return rowsAffected > 0
-            End Using
-        End Using
-    End Function
-
-    Private Sub TogglePasswordVisibility(txtBox As TextBox, btn As Button)
-        ' Toggle the PasswordChar property of the textbox
-        If txtBox.PasswordChar = "*"c Then
-            txtBox.PasswordChar = ControlChars.NullChar ' Show password text
-            btn.Text = "Hide"
-        Else
-            txtBox.PasswordChar = "*"c ' Hide password text
-            btn.Text = "Show"
-        End If
     End Sub
-
 
     Private Function EmailAddressExists(emailAddress As String) As Boolean
         Using connection As New SqlConnection(connectionString)
@@ -398,11 +301,11 @@ Public Class Form8
         TogglePasswordVisibility(txtCurrentPassword, btnSee)
     End Sub
 
-    Private Sub btnS2_Click(sender As Object, e As EventArgs) Handles btnS1.Click
-        TogglePasswordVisibility(txtNewPassword, btnS1)
+    Private Sub btnS2_Click(sender As Object, e As EventArgs) Handles btnS2.Click
+        TogglePasswordVisibility(txtNewPassword, btnS2)
     End Sub
 
-    Private Sub btnS3_Click(sender As Object, e As EventArgs) Handles btnS1.Click
+    Private Sub btnS3_Click(sender As Object, e As EventArgs) Handles btnS3.Click
         TogglePasswordVisibility(txtConfirmPassword, btnS3)
     End Sub
 
@@ -414,5 +317,6 @@ Public Class Form8
             Return
         End If
     End Sub
+
 
 End Class

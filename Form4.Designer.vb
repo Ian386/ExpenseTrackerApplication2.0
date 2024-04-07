@@ -91,7 +91,6 @@ Partial Class Form4
         btnTransaction.UseVisualStyleBackColor = False
         ' 
 
-
         ' btnHelp
         ' 
         btnHelp.AutoSize = True
@@ -235,7 +234,6 @@ Partial Class Form4
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        BackgroundImageLayout = ImageLayout.None
 
         ClientSize = New Size(690, 638)
 

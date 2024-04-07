@@ -204,7 +204,9 @@ Partial Class Form5
         cbChooseWalllet.Font = New Font("Tahoma", 9F)
         cbChooseWalllet.ForeColor = Color.Black
         cbChooseWalllet.FormattingEnabled = True
-        cbChooseWalllet.Items.AddRange(New Object() {"wallet 1", "wallet 2"})
+
+        cbChooseWalllet.Items.AddRange(New Object() {"demowall1", "demoo2"})
+
         cbChooseWalllet.Location = New Point(201, 271)
         cbChooseWalllet.Name = "cbChooseWalllet"
         cbChooseWalllet.Size = New Size(148, 22)

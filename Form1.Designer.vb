@@ -41,9 +41,12 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(197, 367)
+
+        Label3.Location = New Point(138, 220)
+        Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(75, 20)
+        Label3.Size = New Size(60, 15)
+
         Label3.TabIndex = 2
         Label3.Text = "Username"
         ' 
@@ -51,10 +54,11 @@ Partial Class Form1
         ' 
         Label4.AutoSize = True
 
-        Label4.Location = New Point(197, 427)
-
+        Label4.Location = New Point(138, 256)
+        Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(70, 20)
+        Label4.Size = New Size(57, 15)
+
         Label4.TabIndex = 3
         Label4.Text = "Password"
         ' 
@@ -62,7 +66,8 @@ Partial Class Form1
         ' 
         Label5.AutoSize = True
 
-        Label5.Location = New Point(200, 579)
+        Label5.Location = New Point(140, 347)
+        Label5.Margin = New Padding(2, 0, 2, 0)
 
         Label5.Name = "Label5"
         Label5.Size = New Size(115, 15)
@@ -73,7 +78,8 @@ Partial Class Form1
         ' 
         Label6.AutoSize = True
 
-        Label6.Location = New Point(434, 581)
+        Label6.Location = New Point(304, 349)
+        Label6.Margin = New Padding(2, 0, 2, 0)
 
         Label6.Name = "Label6"
         Label6.Size = New Size(27, 15)
@@ -84,7 +90,8 @@ Partial Class Form1
         ' 
         LinkLabel1.AutoSize = True
 
-        LinkLabel1.Location = New Point(368, 579)
+        LinkLabel1.Location = New Point(258, 347)
+        LinkLabel1.Margin = New Padding(2, 0, 2, 0)
 
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(48, 15)
@@ -99,7 +106,9 @@ Partial Class Form1
         Button1.BackgroundImageLayout = ImageLayout.Stretch
         Button1.FlatAppearance.BorderSize = 0
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(285, 510)
+
+        Button1.Location = New Point(200, 306)
+        Button1.Margin = New Padding(2)
 
         Button1.Name = "Button1"
         Button1.Size = New Size(78, 20)
@@ -110,18 +119,21 @@ Partial Class Form1
         ' username
         ' 
 
-        username.Location = New Point(349, 367)
+        username.Location = New Point(244, 220)
+        username.Margin = New Padding(2)
         username.Name = "username"
-        username.Size = New Size(150, 31)
+        username.Size = New Size(106, 23)
+
         username.TabIndex = 8
         ' 
         ' password
         ' 
-        password.Location = New Point(349, 427)
 
+        password.Location = New Point(244, 256)
+        password.Margin = New Padding(2)
         password.Name = "password"
         password.PasswordChar = "*"c
-        password.Size = New Size(150, 31)
+        password.Size = New Size(106, 23)
         password.TabIndex = 9
 
         ' 
@@ -133,9 +145,12 @@ Partial Class Form1
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.Red
-        Button2.Location = New Point(603, 23)
+
+        Button2.Location = New Point(422, 14)
+        Button2.Margin = New Padding(2)
         Button2.Name = "Button2"
-        Button2.Size = New Size(40, 36)
+        Button2.Size = New Size(28, 22)
+
         Button2.TabIndex = 10
         Button2.Text = "X"
         Button2.UseVisualStyleBackColor = False
@@ -143,9 +158,12 @@ Partial Class Form1
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.Modern_Initial_E_Logo
-        PictureBox1.Location = New Point(197, 52)
+
+        PictureBox1.Location = New Point(138, 31)
+        PictureBox1.Margin = New Padding(2)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(290, 333)
+        PictureBox1.Size = New Size(203, 200)
+
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 11
         PictureBox1.TabStop = False
@@ -156,8 +174,10 @@ Partial Class Form1
         Panel1.Controls.Add(Button2)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
+
+        Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(712, 88)
+        Panel1.Size = New Size(498, 53)
         Panel1.TabIndex = 12
 
         ' 
@@ -167,7 +187,7 @@ Partial Class Form1
         AutoScaleMode = AutoScaleMode.Font
 
         BackColor = Color.White
-        ClientSize = New Size(712, 694)
+        ClientSize = New Size(498, 416)
         Controls.Add(Panel1)
         Controls.Add(password)
         Controls.Add(username)
@@ -181,6 +201,7 @@ Partial Class Form1
 
         Controls.Add(PictureBox1)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(2)
 
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
