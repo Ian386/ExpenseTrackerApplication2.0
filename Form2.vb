@@ -1,33 +1,75 @@
 ﻿Imports System.Text.RegularExpressions
+Imports System.Data.SqlClient
+Imports Microsoft.Data.SqlClient
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 
 Public Class Form2
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private _userId As Integer
+
+    Public Sub New(userId As Integer)
+        InitializeComponent()
+        _userId = userId
     End Sub
-
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim email As String = TextBox4.Text
-        ' Regular expression pattern for a valid email address
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+
+        con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
+        con.Open()
+
+        Dim email As String = Me.Email.Text
         Dim pattern As String = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-        ' Check if the email address matches the pattern
         If Not Regex.IsMatch(email, pattern) Then
             MessageBox.Show("Invalid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
-        If TextBox6.Text <> TextBox5.Text Then
-            MessageBox.Show("Invalid Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        If cfm_password.Text <> password.Text Then
+            MessageBox.Show("Password Mismatch.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
-        ' Check if all the textboxes are filled and the email address matches the pattern
-        If TextBox1.Text <> "" AndAlso TextBox2.Text <> "" AndAlso TextBox3.Text <> "" AndAlso TextBox4.Text <> "" AndAlso TextBox5.Text <> "" AndAlso TextBox6.Text <> "" AndAlso Regex.IsMatch(email, pattern) AndAlso TextBox6.Text = TextBox5.Text Then
-            ' Set the global variable to indicate that sign-up button is clicked
-            Dim form1 As New Form1
-            Form1.signUpClicked = True
-            Me.Close()
-        Else ' If any of the textboxes are empty, show a message
-            MessageBox.Show("Please fill all details correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+        If firstname.Text = "" Or lastname.Text = "" Or username.Text = "" Or Me.Email.Text = "" Or password.Text = "" Or cfm_password.Text = "" Then
+            MessageBox.Show("Please fill all fields correctly")
+            Return
+        End If
+
+        cmd = New SqlCommand("INSERT INTO user_table values('" & firstname.Text & "','" & lastname.Text & "','" & username.Text & "','" & Me.Email.Text & "','" & password.Text & "')", con)
+        cmd.ExecuteNonQuery()
+
+        MessageBox.Show("User Registered Successfully")
+        Dim form4Instance As New Form4(_userId)
+        form4Instance.Show()
+        Me.Close()
+
+        firstname.Clear()
+        lastname.Clear()
+        username.Clear()
+        Me.Email.Clear()
+        password.Clear()
+        cfm_password.Clear()
+
+        con.Close()
+    End Sub
+
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        If MsgBox("Are you sure you want to exit?", vbExclamation + vbYesNo) = vbYes Then
+            Application.Exit()
+        Else
+            Return
         End If
     End Sub
+
+    Private Sub btnGoBackHome_Click(sender As Object, e As EventArgs) Handles btnGoBackHome.Click
+        Me.Close()
+        Dim form4Instance As New Form4(_userId)
+        form4Instance.Show()
+    End Sub
+
 End Class

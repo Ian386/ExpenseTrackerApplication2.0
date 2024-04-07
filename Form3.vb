@@ -2,6 +2,15 @@
 Imports System.Data.SqlClient
 Imports Microsoft.Data.SqlClient
 Public Class Form3
+
+    Private _userId As Integer
+
+    ' Constructor with userId parameter
+    Public Sub New(userId As Integer)
+        InitializeComponent()
+        _userId = userId
+    End Sub
+
     Dim sqlConn As SqlConnection
     Dim sqlCmd As SqlCommand
     Dim sqlAdp As SqlDataAdapter
@@ -12,7 +21,7 @@ Public Class Form3
     Private enteredAmount As Decimal = 0
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|Data Directory|EtrackerApp.mdf;Integrated Security=True;"
+        Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nzamb\OneDrive\Documents\jkuat\DICA\sem_project\ExpenseTrackerApplication2.0\ETrackerApp.mdf;Integrated Security=True"
         sqlConn = New SqlConnection(connStr)
         sqlConn.Open()
         ' Populate ComboBox with currency options
@@ -21,11 +30,11 @@ Public Class Form3
         ComboBoxCurrency.SelectedIndex = 0
     End Sub
     Private Sub ButtonSubmit_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Using sqlConn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|Data Directory|EtrackerApp.mdf;Integrated Security=True;")
+        Using sqlConn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\OneDrive\Documents\ETrackerApp.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True")
             Try
                 ' Open the connection
                 sqlConn.Open()
-                Dim query As String = "INSERT INTO wallet (name, amount, user_id) VALUES (@Name, @Amount, @UserID)"
+                Dim query As String = "INSERT INTO wallet (name, amount, UserID) VALUES (@Name, @Amount, @UserID)"
                 Using sqlCmd As New SqlCommand(query, sqlConn)
                     sqlCmd.Parameters.AddWithValue("@Name", txtName.Text)
                     sqlCmd.Parameters.AddWithValue("@Amount", Decimal.Parse(txtAmount.Text))
@@ -166,7 +175,7 @@ Public Class Form3
                     ' Add parameters to the SQL query
                     sqlCmd.Parameters.AddWithValue("@Name", name)
                     sqlCmd.Parameters.AddWithValue("@Amount", amount)
-                    sqlCmd.Parameters.AddWithValue("@OwnerId", ownerId)
+                    sqlCmd.Parameters.AddWithValue("@user_id", ownerId)
 
                     ' Execute the SQL query
                     Dim rowsAffected As Integer = sqlCmd.ExecuteNonQuery()
@@ -241,18 +250,36 @@ Public Class Form3
     End Sub
 
     'run LoadWalletData()
-
-
-
-
-
-    Private Sub bthHome_Click(sender As Object, e As EventArgs) Handles bthHome.Click
-        ' Close the current form (Form3) and show the home form (Form1)
-        Form4.Show()
-        Me.Close()
-    End Sub
-
     Private Sub Form3_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         sqlConn.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim form4Instance As New Form7(_userId)
+        form4Instance.Show()
+        Me.Close()
+    End Sub
+    Private Sub btnBudget_Click(sender As Object, e As EventArgs) Handles btnBudget.Click
+        btnBudget.FlatAppearance.BorderSize = 0
+        Dim form5Instance As New Form5(_userId)
+        form5Instance.Show()
+    End Sub
+    Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
+        btnReports.FlatAppearance.BorderSize = 0
+        Dim form7Instance As New Form7(_userId)
+        form7Instance.Show()
+    End Sub
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        btnHelp.FlatAppearance.BorderSize = 0
+        Dim form8Instance As New Form8(_userId)
+        form8Instance.Show()
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        If MsgBox("Are you sure you want to exit?", vbExclamation + vbYesNo) = vbYes Then
+            Application.Exit()
+        Else
+            Return
+        End If
     End Sub
 End Class

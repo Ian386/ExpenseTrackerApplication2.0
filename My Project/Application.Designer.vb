@@ -20,7 +20,7 @@ Namespace My
     ' Solution Explorer), and make changes on the Application tab.
     '
     Partial Friend Class MyApplication
-        
+        Public Shared Property UserId As Integer
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Public Sub New()
             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
@@ -33,7 +33,8 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ExpenseTrackerApplication.Form4
+            Dim mainForm As New Form1(UserId)
+            Me.MainForm = mainForm
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
