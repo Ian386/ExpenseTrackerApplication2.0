@@ -116,6 +116,7 @@ Partial Class Form7
         ' 
         tbxBalance.Location = New Point(116, 206)
         tbxBalance.Name = "tbxBalance"
+        tbxBalance.ReadOnly = True
         tbxBalance.Size = New Size(160, 23)
         tbxBalance.TabIndex = 55
         ' 
@@ -123,6 +124,7 @@ Partial Class Form7
         ' 
         tbxSpent.Location = New Point(116, 166)
         tbxSpent.Name = "tbxSpent"
+        tbxSpent.ReadOnly = True
         tbxSpent.Size = New Size(160, 23)
         tbxSpent.TabIndex = 54
         ' 
@@ -130,6 +132,7 @@ Partial Class Form7
         ' 
         tbxAmount.Location = New Point(116, 125)
         tbxAmount.Name = "tbxAmount"
+        tbxAmount.ReadOnly = True
         tbxAmount.Size = New Size(160, 23)
         tbxAmount.TabIndex = 53
         ' 
@@ -191,12 +194,12 @@ Partial Class Form7
         ' 
         lblWalletName.AutoSize = True
         lblWalletName.BackColor = Color.Transparent
-        lblWalletName.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblWalletName.Font = New Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblWalletName.ForeColor = Color.Black
         lblWalletName.Location = New Point(14, 24)
         lblWalletName.Margin = New Padding(2, 0, 2, 0)
         lblWalletName.Name = "lblWalletName"
-        lblWalletName.Size = New Size(75, 15)
+        lblWalletName.Size = New Size(88, 19)
         lblWalletName.TabIndex = 48
         lblWalletName.Text = "Wallet Name"
         ' 

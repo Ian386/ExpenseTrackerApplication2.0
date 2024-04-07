@@ -311,7 +311,6 @@ Partial Class Form8
         txtUserName1.Location = New Point(208, 20)
         txtUserName1.Multiline = True
         txtUserName1.Name = "txtUserName1"
-        txtUserName1.PasswordChar = "*"c
         txtUserName1.Size = New Size(148, 24)
         txtUserName1.TabIndex = 35
         ' 

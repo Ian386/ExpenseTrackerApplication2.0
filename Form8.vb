@@ -76,18 +76,19 @@ Public Class Form8
             End Using
         End Using
 
-        Dim passwordPattern As String = "^(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$"
+        Dim passwordPattern As String = "^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$"
         If Not Regex.IsMatch(txtNewPassword.Text, passwordPattern) Then
             MessageBox.Show("Password must contain:" & vbCrLf &
-                        "- At least one uppercase letter" & vbCrLf &
-                        "- A special character" & vbCrLf &
-                        "- One number" & vbCrLf &
-                        "- At least 8 characters",
-                        "Password Requirements", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                "- At least one uppercase letter" & vbCrLf &
+                "- A special character" & vbCrLf &
+                "- One number" & vbCrLf &
+                "- At least 8 characters",
+                "Password Requirements", MessageBoxButtons.OK, MessageBoxIcon.Information)
             txtNewPassword.Clear()
             txtConfirmPassword.Clear()
             Return
         End If
+
 
 
         If txtNewPassword.Text <> txtConfirmPassword.Text Then
@@ -111,6 +112,8 @@ Public Class Form8
 
         txtNewPassword.Clear()
         txtConfirmPassword.Clear()
+        txtUserName1.Clear()
+        txtCurrentPassword.Clear()
         MessageBox.Show("Password changed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
@@ -301,5 +304,6 @@ Public Class Form8
             Return
         End If
     End Sub
+
 
 End Class
